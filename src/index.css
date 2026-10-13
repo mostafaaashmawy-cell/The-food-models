@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-wine: #4E1420;
+  --brand-wine-dark: #350B14;
+  --brand-berry: #BA2B43;
+  --brand-rose-blush: #F4EAEB;
+  --brand-warm-white: #FAF8F5;
+  --brand-dark-slate: #1C1917;
+  --brand-gold: #D8B26E;
+  --brand-gold-light: #EACD96;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #BA2B43;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4E1420;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(186, 43, 67, 0.12);
+}
+
+.glass-panel-dark {
+  background: rgba(53, 11, 20, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(216, 178, 110, 0.2);
+}
+
+/* Luxury gradients */
+.luxury-gradient-text {
+  background: linear-gradient(135deg, #4E1420 0%, #BA2B43 60%, #D8B26E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FAF8F5 0%, #D8B26E 50%, #FAF8F5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle mesh gradient background */
+.hero-mesh-gradient {
+  background: radial-gradient(circle at 15% 20%, rgba(186, 43, 67, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at 85% 30%, rgba(78, 20, 32, 0.07) 0%, transparent 50%),
+              radial-gradient(circle at 50% 85%, rgba(216, 178, 110, 0.09) 0%, transparent 50%),
+              #FAF8F5;
+}
+
+/* Dark mesh gradient */
+.dark-mesh-gradient {
+  background: radial-gradient(circle at 10% 20%, rgba(186, 43, 67, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(216, 178, 110, 0.15) 0%, transparent 50%),
+              #350B14;
+}
+
+/* Font switches according to document language */
+html[dir="rtl"] {
+  font-family: "Readex Pro", "Cairo", sans-serif;
+}
+html[dir="ltr"] {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Noise overlay */
+.noise-overlay {
+  background-image: radial-gradient(rgba(78, 20, 32, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
