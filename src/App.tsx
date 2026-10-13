@@ -1,57 +1,53 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
-import { HeroSection } from './components/HeroSection';
-import { HeritageSection } from './components/HeritageSection';
-import { VisualLinesSection } from './components/VisualLinesSection';
-import { PortfolioGallery } from './components/PortfolioGallery';
-import { EnterpriseMatrixSection } from './components/EnterpriseMatrixSection';
-import { ProcessSection } from './components/ProcessSection';
-import { LeadCaptureSection } from './components/LeadCaptureSection';
 import { Footer } from './components/Footer';
 import { ProposalModal } from './components/ProposalModal';
+
+// Dedicated Pages
+import { HomePage } from './pages/HomePage';
+import { ReplicasPage } from './pages/ReplicasPage';
+import { MonumentalPage } from './pages/MonumentalPage';
+import { SmartTablesPage } from './pages/SmartTablesPage';
+import { HeritagePage } from './pages/HeritagePage';
+import { PortfolioPage } from './pages/PortfolioPage';
+import { EnterpriseRoiPage } from './pages/EnterpriseRoiPage';
+import { ContactPage } from './pages/ContactPage';
+
 import { MessageSquare } from 'lucide-react';
 
-export const MainContent: React.FC = () => {
+export const MainLayout: React.FC = () => {
   const [isProposalOpen, setIsProposalOpen] = useState(false);
-
-  const handleScrollTo = (id: string) => {
-    const el = document.querySelector(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#1C1917] transition-colors duration-300">
-      
+      <ScrollToTop />
+
       {/* Sticky Glassmorphic Header */}
       <Navbar onOpenProposal={() => setIsProposalOpen(true)} />
 
-      {/* Main Content Sections */}
+      {/* Main Routed Page Content */}
       <main className="flex-1">
-        <HeroSection
-          onExploreLines={() => handleScrollTo('#visual-lines')}
-          onCommission={() => handleScrollTo('#lead-form')}
-        />
-
-        <HeritageSection />
-
-        <VisualLinesSection />
-
-        <PortfolioGallery />
-
-        <EnterpriseMatrixSection />
-
-        <ProcessSection />
-
-        <LeadCaptureSection />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/lines/replicas" element={<ReplicasPage />} />
+          <Route path="/lines/monumental" element={<MonumentalPage />} />
+          <Route path="/lines/smart-tables" element={<SmartTablesPage />} />
+          <Route path="/heritage" element={<HeritagePage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/enterprise-roi" element={<EnterpriseRoiPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          {/* Fallback */}
+          <Route path="*" element={<HomePage />} />
+        </Routes>
       </main>
 
-      {/* Footer */}
+      {/* Global Footer */}
       <Footer onOpenProposal={() => setIsProposalOpen(true)} />
 
-      {/* Proposal Lookbook Modal */}
+      {/* Executive Proposal Lookbook Modal */}
       <ProposalModal
         isOpen={isProposalOpen}
         onClose={() => setIsProposalOpen(false)}
@@ -76,7 +72,6 @@ export const MainContent: React.FC = () => {
           </span>
         </a>
       </aside>
-
     </div>
   );
 };
@@ -84,7 +79,9 @@ export const MainContent: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <LanguageProvider>
-      <MainContent />
+      <BrowserRouter>
+        <MainLayout />
+      </BrowserRouter>
     </LanguageProvider>
   );
 };

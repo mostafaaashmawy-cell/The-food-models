@@ -3,6 +3,7 @@ export type Language = 'en' | 'ar';
 export interface Translations {
   nav: {
     subsidiary: string;
+    home: string;
     links: {
       craft: string;
       visualLines: string;
@@ -11,11 +12,15 @@ export interface Translations {
       matrix: string;
       process: string;
       roi: string;
+      contact: string;
     };
     lineDropdown: {
       line1: string;
+      line1Desc: string;
       line2: string;
+      line2Desc: string;
       line3: string;
+      line3Desc: string;
     };
     cta: string;
     proposalButton: string;
@@ -52,6 +57,7 @@ export interface Translations {
     sectionTag: string;
     sectionTitle: string;
     sectionSubtitle: string;
+    viewDedicatedPage: string;
     line1: {
       badge: string;
       title: string;
@@ -104,6 +110,67 @@ export interface Translations {
         modes: { id: string; name: string; color: string }[];
       };
     };
+  };
+  outscaleOutdoor: {
+    tag: string;
+    headline: string;
+    subtitle: string;
+    heritageBadge: string;
+    introParagraph: string;
+    doctorBio: {
+      title: string;
+      name: string;
+      role: string;
+      degrees: string[];
+      accolades: string[];
+    };
+    projects: {
+      title: string;
+      client: string;
+      desc: string;
+      image: string;
+      scale: string;
+      materials: string;
+    }[];
+    engineeringSpecs: {
+      title: string;
+      desc: string;
+      items: string[];
+    }[];
+    ctaBox: {
+      title: string;
+      desc: string;
+      btn: string;
+    };
+  };
+  smartTablesPage: {
+    tag: string;
+    headline: string;
+    subtitle: string;
+    videoBadge: string;
+    videoTitle: string;
+    videoDesc: string;
+    videoClips: {
+      id: string;
+      title: string;
+      time: string;
+      desc: string;
+      image: string;
+    }[];
+    specifications: {
+      category: string;
+      specs: { label: string; val: string }[];
+    }[];
+    guestBenefits: {
+      title: string;
+      desc: string;
+      icon: string;
+    }[];
+    roiHighlights: {
+      metric: string;
+      label: string;
+      desc: string;
+    }[];
   };
   matrix: {
     tag: string;
@@ -209,19 +276,24 @@ export const content: Record<Language, Translations> = {
   en: {
     nav: {
       subsidiary: "A Subsidiary of City Scale Models",
+      home: "Home",
       links: {
-        craft: "01. Craft & Heritage",
-        visualLines: "02. Visual Lines",
-        heritage: "03. City Scale Pedigree",
-        portfolio: "04. Masterpiece Gallery",
-        matrix: "05. Enterprise ROI",
-        process: "06. Commission Process",
+        craft: "Craft & Heritage",
+        visualLines: "The 3 Visual Lines",
+        heritage: "City Scale Pedigree",
+        portfolio: "Masterpiece Gallery",
+        matrix: "Enterprise ROI",
+        process: "Commission Process",
         roi: "Enterprise ROI",
+        contact: "Contact & Briefing",
       },
       lineDropdown: {
         line1: "Line 01: Hyper-Realistic Replicas (1:1)",
-        line2: "Line 02: Monumental Fiberglass Sculptures",
+        line1Desc: "Sensory 1:1 food models with zero kitchen prep waste",
+        line2: "Line 02: Monumental Outdoor Models",
+        line2Desc: "Giant fiberglass landmarks powered by Outscale Models",
         line3: "Line 03: Smart Interactive Dining Tables",
+        line3Desc: "Touch tabletop screens, 3D menus & interactive gaming",
       },
       cta: "Request Private Briefing",
       proposalButton: "Executive Concept Deck",
@@ -258,6 +330,7 @@ export const content: Record<Language, Translations> = {
       sectionTag: "CORE PRODUCT SHOWCASE",
       sectionTitle: "The Three Signature Visual Lines",
       sectionSubtitle: "Engineered for luxury hospitality, high-traffic retail, and viral landmark activations.",
+      viewDedicatedPage: "Explore In-Depth Architecture Page →",
       line1: {
         badge: "LINE 01: SENSORY PRECISION",
         title: "Hyper-Realistic Food Replicas & Miniatures",
@@ -286,7 +359,7 @@ export const content: Record<Language, Translations> = {
         badge: "LINE 02: SCALE MONUMENTALISM",
         title: "Monumental Outdoor Fiberglass Models",
         tagline: "Turn your brand into an unmissable urban landmark.",
-        overview: "Scale has a psychological power that 2D signage can never replicate. From a 6-meter towering ice cream swirl visible from the highway to a massive, hyper-detailed burger atop a flagship drive-thru, our outdoor fiberglass sculptures command immediate attention and dominate social media feeds.",
+        overview: "Scale has a psychological power that 2D signage can never replicate. Powered by Outscale Models (outscale-models.com) and City Scale engineering, our monumental outdoor models combine hot-dip galvanized steel framing, FRP polymer molding, and automotive polyurethane curing to withstand extreme sandstorms and desert heat.",
         features: [
           {
             title: "Unrestricted Monumental Scale",
@@ -362,6 +435,174 @@ export const content: Record<Language, Translations> = {
           ],
         },
       },
+    },
+    outscaleOutdoor: {
+      tag: "LINE 02 DEEP DIVE • POWERED BY OUTSCALE MODELS",
+      headline: "Monumental Outdoor Food Sculptures & Urban Landmarks",
+      subtitle: "Engineering massive, weather-proof brand beacons that command urban skylines and generate viral foot traffic.",
+      heritageBadge: "Official Engineering Alliance with Outscale Models (outscale-models.com)",
+      introParagraph: "Scale possesses a psychological dominance that no 2D billboard can rival. Backed by Outscale Models—specialists in large-scale outdoor modeling, monumental sculptures, and mega-installations across Egypt, China, and the GCC—The Food Models engineers permanent outdoor culinary sculptures engineered to survive the harshest desert climates while acting as perpetual selfie magnets for your brand.",
+      doctorBio: {
+        title: "Artistic Direction & Public Sculpture Leadership",
+        name: "Dr. Ahmad Mousa",
+        role: "Chief Public Sculptor & Artistic Consultant (Outscale Models Alliance)",
+        degrees: [
+          "Ph.D. in Public Sculpture (Sculpture & Environmental Relation), Faculty of Fine Arts, Helwan University",
+          "Master’s Degree in Public Sculpture (Specialization in Figurative Sculpture)",
+          "Lecturer in Public Sculpture at the Faculty of Fine Arts, Zamalek",
+          "Lecturer in Sculpture at the Faculty of Arts & Design, Egyptian Russian University",
+        ],
+        accolades: [
+          "Member of the Higher Committee of the International Aswan Sculpture Symposium",
+          "Member of the Official Committee for Evaluating & Documenting Works for the Museum of Modern Egyptian Art (Cairo Opera House)",
+          "Jury Member for the 'Ibdaa' Ministry of Youth Competition & 'The Dome' Visual Arts on DMC",
+          "Key Sculptural Director for COP27 Climate Conference 2022 Monumental Installations",
+        ],
+      },
+      projects: [
+        {
+          title: "Danette Giant Chocolate Dessert Landmark",
+          client: "Danone / Danette",
+          desc: "A massive, hyper-detailed outdoor chocolate cup and dipping dessert sculpture executed with automotive mirror glaze and realistic fluid cream curls.",
+          image: "/outdoor/danette-chocolate.webp",
+          scale: "Monumental Outdoor Scale",
+          materials: "FRP Polymer, UV Automotive Clearcoat, Steel Subframe",
+        },
+        {
+          title: "Sunbites Giant Snack Pack Facade Model",
+          client: "PepsiCo / Sunbites",
+          desc: "Architectural outdoor sculpted snack bag and exploding grain textures engineered for high-visibility commercial campaign activations.",
+          image: "/outdoor/sunbites-chips.webp",
+          scale: "3.5m Architectural Height",
+          materials: "Fiberglass Composite, Polyurethane Automotive Pigments",
+        },
+        {
+          title: "Nescafé Giant Coffee Cup & Beans Landmark",
+          client: "Nestlé / Nescafé",
+          desc: "Multi-meter monumental red mug featuring hand-textured floating froth and oversized roasted coffee beans mounted on an architectural pedestal.",
+          image: "/outdoor/nescafe-coffee.webp",
+          scale: "4+ Meters Total Height",
+          materials: "Hot-Dip Galvanized Core, Cast Resin & Weatherproof FRP",
+        },
+        {
+          title: "FRP Monumental Sculptures & Architectural Art",
+          client: "Outscale International Projects",
+          desc: "Heavy-duty fiberglass reinforced polymers (FRP) engineered in partnership with Outscale's international execution centers.",
+          image: "/outdoor/frp-sculpture.webp",
+          scale: "Multi-Story Capacity",
+          materials: "Marine-Grade Resins, Wind-Load Certified 140km/h",
+        },
+      ],
+      engineeringSpecs: [
+        {
+          title: "Structural Skeleton Engineering",
+          desc: "Every monumental piece over 2 meters is designed around a CAD-calculated internal chassis built from hot-dip galvanized structural steel, preventing corrosion from interior condensation.",
+          items: ["Wind-load calculated up to 140 km/h gusts", "Baseplate anchored with seismic-rated chemical bolts", "Engineered lifting hooks for crane turnkey deployment"],
+        },
+        {
+          title: "Automotive Paint Oven Finishing",
+          desc: "Finished inside dedicated automotive spray booths with multi-stage polyurethane lacquers that resist thermal expansion and UV-induced chalking.",
+          items: ["UV400 chemical inhibitors prevent pigment bleaching", "Hydrophobic ceramic sealants resist road grim & sandstorms", "Scratch-resistant clearcoats withstand public contact"],
+        },
+        {
+          title: "Illumination & Kinetic Integration",
+          desc: "Optional architectural illumination transforms the sculpture into a glowing urban landmark after dark.",
+          items: ["Internal IP68 LED backlighting for sauces and ice layers", "Dynamic neon accent contouring", "Weatherproof sound & smoke effect integration available"],
+        },
+      ],
+      ctaBox: {
+        title: "Commission a Monumental Landmark for Your Brand",
+        desc: "Transform your flagship drive-thru or mall facade into the most photographed location in the city.",
+        btn: "Consult with Our Structural Sculpture Team",
+      },
+    },
+    smartTablesPage: {
+      tag: "LINE 03 DEEP DIVE • EXPERIENTIAL HOSPITALITY TECH",
+      headline: "Smart Interactive Touch Dining Tables",
+      subtitle: "Transforming dinner tables into responsive digital playgrounds, 3D visual menus, and viral family entertainment.",
+      videoBadge: "Live Production Footage Demonstration",
+      videoTitle: "Watch the Technology in Action",
+      videoDesc: "Experience how our commercial-grade multi-touch tables turn customer wait time into engaging, high-margin brand interactions. Footage showcases live multiplayer gaming, interactive menu ordering, and dynamic touch wave responsiveness.",
+      videoClips: [
+        {
+          id: "clip1",
+          title: "Interactive 3D Visual Menu & Instant Upselling",
+          time: "0:12",
+          desc: "Diners rotate 3D photorealistic renderings of steaks, burgers, and cocktails before ordering, boosting average ticket size by 24%.",
+          image: "/smart-tables/youtube-maxres.jpg",
+        },
+        {
+          id: "clip2",
+          title: "Kids & Family Multiplayer Arcade Air-Hockey",
+          time: "0:45",
+          desc: "Family dining friction disappears as children engage in multi-player digital air hockey, puzzles, and interactive coloring right on the tabletop.",
+          image: "/smart-tables/youtube-frame1.jpg",
+        },
+        {
+          id: "clip3",
+          title: "Dynamic Water Ripple & Touch Sensitivity",
+          time: "1:15",
+          desc: "Every glass placement and hand gesture generates realistic water ripple physics and bioluminescent particle streams.",
+          image: "/smart-tables/youtube-frame2.jpg",
+        },
+        {
+          id: "clip4",
+          title: "VIP Ambiance Control & Birthday Animations",
+          time: "1:40",
+          desc: "Diners personalize their table lighting glow or trigger spectacular custom fireworks and birthday celebration animations on demand.",
+          image: "/smart-tables/youtube-frame3.jpg",
+        },
+      ],
+      specifications: [
+        {
+          category: "Hardware & Physical Armor",
+          specs: [
+            { label: "Glass Surface", val: "8mm Thermally Toughened Safety Glass (Anti-Shatter)" },
+            { label: "Thermal Rating", val: "Withstands boiling pots and sizzle platters up to 120°C" },
+            { label: "Water Resistance", val: "IP-65 Hermetically Sealed against beverage spills & heavy cleaning" },
+            { label: "Touch Technology", val: "Projected Capacitive (PCAP) with 10 to 40 simultaneous touch points" },
+            { label: "Display Resolution", val: "4K Ultra-HD (3840 x 2160) IPS Commercial Grade Panel (700 nits)" },
+          ],
+        },
+        {
+          category: "Software Ecosystem & Integration",
+          specs: [
+            { label: "POS Synchronization", val: "Bi-directional API for Oracle Micros, Revel, Toast, Foodics & Odoo" },
+            { label: "Operating System", val: "Industrial Embedded Android / Windows IoT Enterprise" },
+            { label: "Content Management", val: "Cloud-based portal to update menu items, prices & promos in real time" },
+            { label: "Payment Gateway", val: "NFC / Tap-to-Pay reader & QR billing integration directly on table" },
+            { label: "Refresh Rate", val: "Ultra-low latency 120Hz touch response for buttery smooth gaming" },
+          ],
+        },
+      ],
+      guestBenefits: [
+        {
+          title: "24% Increase in Average Order Value (AOV)",
+          desc: "Vibrant high-resolution imagery and automatic dessert/drink pairing prompts trigger impulsive high-margin orders without server pressure.",
+          icon: "TrendingUp",
+        },
+        {
+          title: "Zero Wait-Time Frustration",
+          desc: "The 15-20 minutes between ordering and food arrival is transformed from boring wait time into competitive gaming and brand discovery.",
+          icon: "Gamepad2",
+        },
+        {
+          title: "Organic TikTok & Instagram Visibility",
+          desc: "Almost 85% of guests pull out their phones to record table games and illuminated dish reveals, generating free viral content.",
+          icon: "Sparkles",
+        },
+        {
+          title: "Staff Efficiency Optimization",
+          desc: "Servers spend less time reciting menus and taking drink reorders, allowing them to focus on luxury hospitality and table turnaround.",
+          icon: "Clock",
+        },
+      ],
+      roiHighlights: [
+        { metric: "+24%", label: "Average Check Uplift", desc: "Driven by visual 3D dessert & specialty cocktail prompts" },
+        { metric: "120Hz", label: "Touch Responsiveness", desc: "Sub-millisecond latency for fluid gaming and typing" },
+        { metric: "IP-65", label: "Liquid Spill Protection", desc: "Built to survive aggressive commercial restaurant environments" },
+        { metric: "35%", label: "Faster Table Turnaround", desc: "Instant digital split billing and contactless settlement" },
+      ],
     },
     matrix: {
       tag: "ENTERPRISE VALUE MATRIX",
@@ -441,7 +682,7 @@ export const content: Record<Language, Translations> = {
     portfolio: {
       tag: "MASTERPIECE VAULT",
       title: "Handcrafted Visual Masterpieces",
-      subtitle: "Explore our archive of hyper-realistic food replicas and landmark installations crafted for premier brands.",
+      subtitle: "Explore our archive of hyper-realistic food replicas, monumental sculptures, and smart table installations.",
       categories: {
         all: "All Works",
         replicas: "1:1 Replicas",
@@ -498,6 +739,46 @@ export const content: Record<Language, Translations> = {
           tags: ["1:1 Scale", "Glaze Lock", "Drive-Thru Showcase"],
           scale: "36cm True Diameter",
           finish: "Oil-Proof Polyurethane Glaze",
+        },
+        {
+          id: "danette-chocolate-outdoor",
+          title: "Danette Giant Chocolate Dessert Landmark",
+          category: "sculptures",
+          desc: "Monumental outdoor fiberglass dessert landmark engineered with Outscale Models for extreme desert UV.",
+          image: "/outdoor/danette-chocolate.webp",
+          tags: ["Monumental Scale", "FRP Polymer", "Automotive Cured"],
+          scale: "Monumental Scale",
+          finish: "Automotive Polyurethane UV Lacquer",
+        },
+        {
+          id: "sunbites-outdoor-facade",
+          title: "Sunbites Monumental Architectural Snack Pack",
+          category: "sculptures",
+          desc: "Massive outdoor commercial packaging sculpture with internal structural steel framework.",
+          image: "/outdoor/sunbites-chips.webp",
+          tags: ["Outdoor Beacon", "Steel Skeleton", "Wind Certified"],
+          scale: "3.5m Architectural Height",
+          finish: "Weatherproof Automotive Coating",
+        },
+        {
+          id: "nescafe-giant-mug",
+          title: "Nescafé Giant Coffee Cup & Beans Monument",
+          category: "sculptures",
+          desc: "Multi-meter monumental red mug featuring hand-textured froth and oversized coffee beans.",
+          image: "/outdoor/nescafe-coffee.webp",
+          tags: ["Landmark Beacon", "Drive-Thru Centerpiece", "Outscale Alliance"],
+          scale: "4+ Meters Total Height",
+          finish: "Galvanized Core & Marine Resin",
+        },
+        {
+          id: "smart-table-system",
+          title: "Smart Touch Interactive Dining Table Station",
+          category: "smart",
+          desc: "Commercial 4K multi-touch restaurant table with 3D digital menu, family air hockey, and IP-65 glass armor.",
+          image: "/smart-tables/youtube-maxres.jpg",
+          tags: ["Interactive Table", "4K Multi-Touch", "POS Integrated"],
+          scale: "Commercial VIP Table (4-6 Guests)",
+          finish: "8mm Thermally Toughened Tempered Glass",
         },
         {
           id: "chocolate-gateau",
@@ -558,8 +839,8 @@ export const content: Record<Language, Translations> = {
         lines: "Product Lines of Interest",
         lineOptions: [
           { id: "replicas", label: "Line 01: Hyper-Realistic Food Replicas (1:1)" },
-          { id: "monumental", label: "Line 02: Monumental Outdoor Fiberglass Sculptures" },
-          { id: "smart", label: "Line 03: Smart Interactive Dining Tables" },
+          { id: "monumental", label: "Line 02: Monumental Outdoor Fiberglass Sculptures (Outscale)" },
+          { id: "smart", label: "Line 03: Smart Interactive Touch Dining Tables" },
           { id: "full", label: "Full Turnkey Architectural Suite" },
         ],
         city: "Target Deployment Location",
@@ -583,7 +864,7 @@ export const content: Record<Language, Translations> = {
       desc: "Download our confidential portfolio deck featuring material engineering specs, photogrammetry case studies, and enterprise ROI models for hospitality leaders.",
       downloadBtn: "Download PDF Lookbook (Instant Access)",
       features: [
-        "Complete technical breakdown of Line 01, Line 02, and Line 03",
+        "Complete technical breakdown of Line 01, Line 02 (Outscale), and Line 03",
         "Comparative cost analysis vs daily display food waste",
         "Wind-load & UV weatherproofing engineering certificates",
         "Interactive dining table software & hardware integration guide",
@@ -597,25 +878,30 @@ export const content: Record<Language, Translations> = {
       quickLinksTitle: "Strategic Navigation",
       contactTitle: "Executive Contacts",
       copyright: "© 2026 The Food Models. All Rights Reserved.",
-      rights: "Engineered with architectural precision by City Scale Models.",
+      rights: "Engineered with architectural precision by City Scale Models & Outscale Models.",
     },
   },
   ar: {
     nav: {
       subsidiary: "إحدى شركات سيتي للمجسمات (City Scale)",
+      home: "الرئيسية",
       links: {
-        craft: "01. الإرث والاعتماد",
-        visualLines: "02. خطوط الإنتاج",
-        heritage: "03. امتياز سيتي",
-        portfolio: "04. معرض الأعمال",
-        matrix: "05. العائد الاستثماري",
-        process: "06. رحلة الشراكة",
+        craft: "قصتنا وإرثنا",
+        visualLines: "خطوط الإنتاج الثلاثة",
+        heritage: "امتياز سيتي",
+        portfolio: "معرض الأعمال",
+        matrix: "العائد الاستثماري",
+        process: "رحلة الشراكة",
         roi: "العائد الاستثماري",
+        contact: "طلب استشارة وحجز",
       },
       lineDropdown: {
         line1: "خط 01: المجسمات فائقة الواقعية (1:1)",
-        line2: "خط 02: منحوتات الفايبر جلاس العملاقة",
+        line1Desc: "مجسمات أطعمة تحاكي الأصل بنسبة 100% مع صفر هدر",
+        line2: "خط 02: المنحوتات الخارجية العملاقة",
+        line2Desc: "معالم فايبر جلاس ضخمة مدعومة بتقنيات Outscale Models",
         line3: "خط 03: طاولات الطعام التفاعلية الذكية",
+        line3Desc: "شاشات لمس تفاعلية، قوائم ثلاثية الأبعاد وألعاب عائلية",
       },
       cta: "احجز استشارة خاصة لمشروعك",
       proposalButton: "الملف التعريفي للشركات",
@@ -652,6 +938,7 @@ export const content: Record<Language, Translations> = {
       sectionTag: "خطوط الإنتاج الثلاثة الرئيسية",
       sectionTitle: "ثلاثة مسارات إبداعية تمنح علامتك التفوق",
       sectionSubtitle: "صُممت خصيصاً لسلاسل المطاعم الراقية، ومواقع البيع المزدحمة، والمعالم الترفيهية الفيروسية.",
+      viewDedicatedPage: "استكشف الصفحة الهندسية التخصصية الشاملة ←",
       line1: {
         badge: "خط الإنتاج 01: الواقعية الحسية",
         title: "المجسمات الغذائية فائقة الواقعية (1:1 Food Replicas)",
@@ -680,7 +967,7 @@ export const content: Record<Language, Translations> = {
         badge: "خط الإنتاج 02: الضخامة والمعالم",
         title: "مجسمات الفايبر جلاس الخارجية الضخمة (Monumental Sculptures)",
         tagline: "اجعل فرعك علامة جغرافية بارزة يتحدث عنها الجميع.",
-        overview: "الحجم والضخامة لهما تأثير سيكولوجي طاغٍ لا تضاهيه أي لافتة إعلانية تقليدية. نصمم وننفذ مجسمات فايبر جلاس عملاقة بأي قياس تطلبه—سواء كان مخروط آيس كريم بارتفاع 6 أمتار يُرى من الطرق السريعة، أو مجسم شطيرة برجر عملاق يعتلي مبنى الفرع الرئيسي أو محطات طلبات السيارات (Drive-Thru).",
+        overview: "الحجم والضخامة لهما تأثير سيكولوجي طاغٍ لا تضاهيه أي لافتة إعلانية تقليدية. مدعومون بإمكانيات Outscale Models (outscale-models.com) وتحالف سيتي للمجسمات، نصنع وننفذ مجسمات فايبر جلاس عملاقة بأي قياس تطلبه مع هياكل حديد مجلفن ودهانات حرارية معتمدة.",
         features: [
           {
             title: "مرونة هندسية بلا حدود للأحجام",
@@ -756,6 +1043,174 @@ export const content: Record<Language, Translations> = {
           ],
         },
       },
+    },
+    outscaleOutdoor: {
+      tag: "ملف خط الإنتاج 02 التخصصي • تحالف OUTSCALE MODELS",
+      headline: "مجسمات الفايبر جلاس الخارجية العملاقة والمعالم المعمارية",
+      subtitle: "صناعة معالم بصرية عملاقة تقاوم أقسى الظروف المناخية وتتصدر منصات التواصل الاجتماعي.",
+      heritageBadge: "تحالف هندسي رسمي مع Outscale Models (outscale-models.com)",
+      introParagraph: "الحجم والضخامة لهما تأثير سيكولوجي طاغٍ لا تضاهيه أي لافتة إعلانية تقليدية. بدعم من شركة Outscale Models المتخصصة في المجسمات الخارجية الضخمة والمنحوتات الميدانية الكبرى في مصر والخليج والصين، تقوم The Food Models بتصميم وتصنيع مجسمات أطعمة خارجية عملاقة مصممة هندسياً لتقاوم حرارة الصيف الشديدة والعواصف الرملية، لتتحول فوراً إلى علامة جغرافية ونقطة التقاط صور وفيديوهات سيلفي لا تتوقف.",
+      doctorBio: {
+        title: "القيادة الفنية والاستشارات النحتية العامة",
+        name: "د. أحمد موسى",
+        role: "كبير استشاريي النحت الميداني (تحالف Outscale Models و The Food Models)",
+        degrees: [
+          "دكتوراه في النحت الميداني (النحت العام وعلاقته بالبيئة المحيطة) - كلية الفنون الجميلة بالزمالك، جامعة حلوان",
+          "ماجستير في النحت الميداني (تخصص نحت تشخيصي)",
+          "مدرس النحت الميداني بكلية الفنون الجميلة بالزمالك",
+          "مدرس النحت بكلية الفنون والتصميم بالجامعة المصرية الروسية",
+        ],
+        accolades: [
+          "عضو اللجنة العليا لسمبوزيوم أسوان الدولي لفن النحت",
+          "عضو لجنة تقييم وتوثيق مقتنيات متحف الفن المصري الحديث بدار الأوبرا المصرية",
+          "عضو لجان تحكيم مسابقة «إبداع» بوزارة الشباب والرياضة وبرنامج «الدوم» للفنون التشكيلية",
+          "المشرف الفني على تنفيذ المنحوتات الميدانية الكبرى في قمة المناخ COP27 بشرم الشيخ",
+        ],
+      },
+      projects: [
+        {
+          title: "مجسم حلوى وشوكولاتة دانيت العملاقة (Danette)",
+          client: "دانون / دانيت (Danone)",
+          desc: "مجسم خارجي ضخم ومتقن للغاية لكوب وحلوى شوكولاتة دانيت مع تموجات القشطة اللامعة بتقنية دهانات السيارات الحرارية.",
+          image: "/outdoor/danette-chocolate.webp",
+          scale: "مقياس ميداني ضخم",
+          materials: "بوليمر فايبر جلاس FRP، طلاء بولي يوريثان حراري عازل",
+        },
+        {
+          title: "مجسم واجهة إعلان صن بايتس المعماري (Sunbites)",
+          client: "بيبسيكو / صن بايتس (PepsiCo)",
+          desc: "مجسم معماري ضخم لكيس رقائق الخبز المقرمشة مع تطاير المكونات في الهواء لواجهات الفروع ومحطات التوزيع الرئيسية.",
+          image: "/outdoor/sunbites-chips.webp",
+          scale: "ارتفاع 3.5 أمتار",
+          materials: "مركبات فايبر جلاس عالية الصلابة، أصباغ سيارات معالجة ضد الشمس",
+        },
+        {
+          title: "مجسم كوب وحبوب قهوة نسكافيه الميداني (Nescafé)",
+          client: "نستله / نسكافيه (Nestlé)",
+          desc: "كوب نسكافيه أحمر ضخم بعدة أمتار مع محاكاة لرغوة القهوة الساخنة وحبات البن الكبيرة على قاعدة معمارية بارزة.",
+          image: "/outdoor/nescafe-coffee.webp",
+          scale: "ارتفاع أكثر من 4 أمتار",
+          materials: "هيكل حديد مجلفن، راتنجات فايبر جلاس بحرية مقاومة للرطوبة",
+        },
+        {
+          title: "منحوتات الفايبر جلاس الإنشائية FRP Sculptures",
+          client: "مشاريع Outscale الإقليمية والدولية",
+          desc: "بوليمرات مقواة بألياف زجاجية عالية التحمل بالتعاون مع مراكز التصنيع الدولية التابعة لسيتي وأوت سكيل.",
+          image: "/outdoor/frp-sculpture.webp",
+          scale: "قدرة على تنفيذ ارتفاعات متعددة الطوابق",
+          materials: "راتنجات مقاومة للحرارة والرياح حتى 140 كم/س",
+        },
+      ],
+      engineeringSpecs: [
+        {
+          title: "الهيكل الفولاذي الداخلي المعتمد",
+          desc: "كل مجسم يتجاوز ارتفاعه مترين يُبنى داخلياً على شاسيه من الحديد المجلفن ضد الصدأ ومحسوب عبر برامج CAD لمقاومة التآكل والتكثف الداخلي.",
+          items: ["مقاومة أحمال الرياح العاتية حتى 140 كم/ساعة", "تثبيت كيميائي للأرضيات بمسامير زلزالية معتمدة", "شناكل رفع مدمجة لتسهيل التركيب بالأوناش الهندسية"],
+        },
+        {
+          title: "غرف دهانات السيارات والأفران الحرارية",
+          desc: "تشطيب نهائي داخل كبائن رش أفران السيارات بدهانات بولي يوريثان متعددة الطبقات تمنع التمدد الحراري والبهتان الشمسي.",
+          items: ["مركبات UV400 تمنع اصفرار الألوان أو تغير درجاتها في صيف الخليج", "عزل سيراميكي طارد للغبار والرمال والأمطار", "طبقة حماية ضد الخدوش ولمس الجمهور المباشر"],
+        },
+        {
+          title: "الإضاءة المعمارية والمؤثرات المدمجة",
+          desc: "إمكانية دمج الإضاءات الذكية لتحويل المجسم إلى منارة بصرية ساطعة تجذب الأنظار ليلاً من مسافات شاسعة.",
+          items: ["إضاءة LED داخلية معزولة IP68 للصلصات والطبقات الشفافة", "خطوط نيون خارجية لتحديد الحواف في الظلام", "أنظمة بخار ومؤثرات صوتية مقاومة للمطر"],
+        },
+      ],
+      ctaBox: {
+        title: "اطلب تصنيع مجسم خارجي عملاق لعلامتك التجارية",
+        desc: "اجعل فرعك الرئيسي أو مسار طلبات السيارات (Drive-Thru) المعلم الأكثر تصويراً وتداولاً في مدينتك.",
+        btn: "تواصل مع مهندسي المنحوتات الإنشائية",
+      },
+    },
+    smartTablesPage: {
+      tag: "ملف خط الإنتاج 03 التخصصي • تكنولوجيا الضيافة الاستثنائية",
+      headline: "طاولات الطعام التفاعلية الذكية (Smart Tables)",
+      subtitle: "تحويل طاولات المطاعم إلى منصات رقمية ذكية، وقوائم تفاعلية ثلاثية الأبعاد، وتجارب ترفيهية عائلية تأسر الضيوف.",
+      videoBadge: "معاينة الفيديو الحي للمنتج أثناء التشغيل",
+      videoTitle: "شاهد التكنولوجيا الاستثنائية أثناء عملها في المطعم",
+      videoDesc: "شاهد كيف تحول طاولات اللمس الذكية الصناعية وقت انتظار الضيوف إلى تجربة تفاعلية ممتعة ترفع مبيعات المطعم بشكل ملحوظ. يعرض الفيديو التفاعل الحي مع الألعاب الجماعية، وقوائم الطعام التفاعلية، وتموجات الماء المستجيبة لحركة اليدين.",
+      videoClips: [
+        {
+          id: "clip1",
+          title: "قوائم الطعام ثلاثية الأبعاد والطلب الفوري المربح",
+          time: "0:12",
+          desc: "يقوم الضيوف بتدوير ومطالعة أطباق الستيك والبرجر والمشروبات ثلاثية الأبعاد بدقة واقعية قبل الطلب، مما يرفع متوسط الفاتورة بنسبة 24%.",
+          image: "/smart-tables/youtube-maxres.jpg",
+        },
+        {
+          id: "clip2",
+          title: "ألعاب الهوكي والآركيد للأطفال والعائلات",
+          time: "0:45",
+          desc: "يقضي تماماً على ملل انتظار الطعام؛ حيث يتنافس أفراد العائلة في لعبة الهوكي الهوائي الذكية وحل الألغاز والتلوين مباشرة على الطاولة.",
+          image: "/smart-tables/youtube-frame1.jpg",
+        },
+        {
+          id: "clip3",
+          title: "تموجات الماء الحية وحساسية اللمس الفائقة",
+          time: "1:15",
+          desc: "تتفاعل الطاولة فورياً مع حركة الأيدي ووضع الأكواب والأطباق بمؤثرات فيزيائية تحاكي أمواج الماء والجسيمات الضوئية المضيئة.",
+          image: "/smart-tables/youtube-frame2.jpg",
+        },
+        {
+          id: "clip4",
+          title: "التحكم في الإضاءة المزاجية واحتفالات أعياد الميلاد",
+          time: "1:40",
+          desc: "يمكن للضيوف اختيار ألوان الإضاءة المحيطية للطاولة أو إطلاق مؤثرات الألعاب النارية والتهاني الرقمية بمناسبة أعياد الميلاد.",
+          image: "/smart-tables/youtube-frame3.jpg",
+        },
+      ],
+      specifications: [
+        {
+          category: "المتانة الفيزيائية والدرع الزجاجي",
+          specs: [
+            { label: "سطح الطاولة", val: "زجاج أمان مقسّى حرارياً بسمك 8 ملم مضاد للكسر والتناثر" },
+            { label: "مقاومة الحرارة", val: "تتحمل الأطباق الساخنة والأواني المغلية حتى 120 درجة مئوية" },
+            { label: "مقاومة السوائل", val: "معزولة كلياً بمعيار IP-65 ضد المشروبات المسكوبة وعمليات التعقيم اليومية الشاقة" },
+            { label: "تقنية اللمس", val: "لمس سعوي متطور (PCAP) يدعم من 10 إلى 40 نقطة لمس متزامنة" },
+            { label: "دقة الشاشة", val: "شاشة عرض تجارية بدقة 4K Ultra-HD وسطوع 700 nits مقاوم للإضاءة العالية" },
+          ],
+        },
+        {
+          category: "البرمجيات والربط مع أنظمة المطاعم",
+          specs: [
+            { label: "الربط مع الكاشير (POS)", val: "واجهات برمجية API متوافقة مع Micros، وFoodics، وOdoo، وToast" },
+            { label: "نظام التشغيل", val: "نظام أندرويد صناعي مدمج أو Windows IoT Enterprise المخصص للعمل الشاق" },
+            { label: "إدارة المحتوى السحابية", val: "لوحة تحكم سحابية لتحديث أصناف المنيو والأسعار والعروض فورياً" },
+            { label: "الدفع عند الطاولة", val: "دعم مدمج لشرائح NFC ورموز QR للدفع الفوري دون انتظار الجرسون" },
+            { label: "سرعة الاستجابة", val: "معدل تحديث فائق 120 هرتز يمنح استجابة فورية وسلسة للألعاب واللمس" },
+          ],
+        },
+      ],
+      guestBenefits: [
+        {
+          title: "زيادة متوسط قيمة الفاتورة بنسبة 24%",
+          desc: "الصور والفيديوهات المغرية ثلاثية الأبعاد واقتراحات الحلويات والمشروبات الإضافية تحفز الشراء اللحظي دون أي إلحاح من طاقم الخدمة.",
+          icon: "TrendingUp",
+        },
+        {
+          title: "القضاء تماماً على ملل وقت الانتظار",
+          desc: "تتحول فترة الـ 15-20 دقيقة بين الطلب ووصول الطعام من وقت ملل وتوتر إلى متعة ومنافسة ترفيهية بين أفراد الأسرة.",
+          icon: "Gamepad2",
+        },
+        {
+          title: "انتشار فيروزي عضوي على تيك توك وإنستغرام",
+          desc: "يقوم أكثر من 85% من الضيوف بإخراج هواتفهم وتصوير شاشة الطاولة وألعابها، مما يوفر لعلامتك ملايين المشاهدات المجانية.",
+          icon: "Sparkles",
+        },
+        {
+          title: "رفع كفاءة وسرعة دورة الطاولات (Table Turnover)",
+          desc: "طلب أسرع ودفع ذاتي فوري يوفر وقت النادل بنسبة 35%، مما يتيح استقبال عدد أكبر من الضيوف في ساعات الذروة.",
+          icon: "Clock",
+        },
+      ],
+      roiHighlights: [
+        { metric: "+24%", label: "ارتفاع في قيمة الفاتورة", desc: "بفضل عروض الأطباق الجانبية والحلويات التلقائية" },
+        { metric: "120Hz", label: "استجابة لمس فورية", desc: "أداء ناعم للغاية للألعاب والتصفح بدون أي تقطيع" },
+        { metric: "IP-65", label: "حماية تامة من السوائل", desc: "صُممت لتتحمل أصعب ظروف العمل في كبرى المطاعم" },
+        { metric: "35%", label: "سرعة في دوران الطاولة", desc: "دفع سريع وتقسيم إلكتروني للفاتورة عند الطاولة" },
+      ],
     },
     matrix: {
       tag: "مقارنة الريادة الاستثمارية",
@@ -835,7 +1290,7 @@ export const content: Record<Language, Translations> = {
     portfolio: {
       tag: "خزينة التحف الفنية",
       title: "أعمال نفخر بصناعتها لكبرى العلامات",
-      subtitle: "استكشف نماذج من أعمالنا المصنعة يدوياً بأعلى مقاييس الواقعية والجودة الهندسية.",
+      subtitle: "استكشف نماذج من أعمالنا المصنعة يدوياً بأعلى مقاييس الواقعية والجودة الهندسية عبر الخطوط الثلاثة.",
       categories: {
         all: "جميع الأعمال",
         replicas: "مجسمات 1:1",
@@ -892,6 +1347,46 @@ export const content: Record<Language, Translations> = {
           tags: ["مقياس 1:1", "تثبيت لمعان", "واجهات طلبات"],
           scale: "قطر حقيقي 36 سم",
           finish: "طلاء بولي يوريثان مقاوم للزيوت",
+        },
+        {
+          id: "danette-chocolate-outdoor",
+          title: "مجسم حلوى وشوكولاتة دانيت العملاقة الميداني",
+          category: "sculptures",
+          desc: "معلم فايبر جلاس خارجي ضخم مصنع بالتعاون مع أوت سكيل للمجسمات ومقاوم لحرارة الشمس.",
+          image: "/outdoor/danette-chocolate.webp",
+          tags: ["مقياس عملاق", "بوليمر FRP", "معالجة حرارية"],
+          scale: "مقياس ميداني ضخم",
+          finish: "بولي يوريثان حراري عازل للأشعة UV",
+        },
+        {
+          id: "sunbites-outdoor-facade",
+          title: "مجسم إعلان واجهات صن بايتس المعماري",
+          category: "sculptures",
+          desc: "مجسم معماري خارجي عملاق لكيس رقائق الخبز المقرمشة مع هيكل فولاذي داخلي.",
+          image: "/outdoor/sunbites-chips.webp",
+          tags: ["منارة بصرية", "هيكل حديدي", "معتمد ضد الرياح"],
+          scale: "ارتفاع 3.5 م",
+          finish: "دهانات سيارات مقاومة للعوامل الجوية",
+        },
+        {
+          id: "nescafe-giant-mug",
+          title: "مجسم كوب وحبوب قهوة نسكافيه الميداني الضخم",
+          category: "sculptures",
+          desc: "مجسم أحمر ضخم بعدة أمتار مع محاكاة رغوة القهوة وحبات البن لواجهات المطاعم والفروع.",
+          image: "/outdoor/nescafe-coffee.webp",
+          tags: ["معلم سياحي", "محطات درايف ثرو", "تحالف أوت سكيل"],
+          scale: "أكثر من 4 أمتار",
+          finish: "حديد مجلفن وراتنجات بحرية",
+        },
+        {
+          id: "smart-table-system",
+          title: "محطة طاولات الطعام الذكية التفاعلية 4K",
+          category: "smart",
+          desc: "طاولة لمس تجارية مقاومة للسوائل بدقة 4K مع ألعاب عائلية وقوائم طعام ثلاثية الأبعاد متصلة بالكاشير.",
+          image: "/smart-tables/youtube-maxres.jpg",
+          tags: ["طاولات ذكية", "لمس 4K متعدد", "ربط مع الكاشير"],
+          scale: "طاولة مطعم لـ 4-6 أفراد",
+          finish: "زجاج أمان مقسّى حرارياً 8 ملم",
         },
         {
           id: "chocolate-gateau",
@@ -952,7 +1447,7 @@ export const content: Record<Language, Translations> = {
         lines: "خط الإنتاج المطلوب لمشروعك",
         lineOptions: [
           { id: "replicas", label: "خط 01: مجسمات أطعمة فائقة الواقعية (1:1)" },
-          { id: "monumental", label: "خط 02: منحوتات فايبر جلاس خارجية عملاقة" },
+          { id: "monumental", label: "خط 02: منحوتات فايبر جلاس خارجية عملاقة (أوت سكيل)" },
           { id: "smart", label: "خط 03: طاولات طعام تفاعلية ذكية" },
           { id: "full", label: "باقة هندسية ومعمارية متكاملة لجميع الخطوط" },
         ],
@@ -991,7 +1486,7 @@ export const content: Record<Language, Translations> = {
       quickLinksTitle: "روابط سريعة",
       contactTitle: "التواصل التنفيذي المباشر",
       copyright: "جميع الحقوق محفوظة © 2026 The Food Models.",
-      rights: "هندسة وتصنيع سيتي للمجسمات المعمارية.",
+      rights: "هندسة وتصنيع سيتي للمجسمات المعمارية وأوت سكيل.",
     },
   },
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ShieldCheck, MessageSquare, Mail, Phone, MapPin, ArrowUp, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ShieldCheck, MessageSquare, Mail, Phone, MapPin, ArrowUp, Sparkles, Layers, Maximize2, Tablet } from 'lucide-react';
 
 interface FooterProps {
   onOpenProposal: () => void;
@@ -27,8 +28,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           
           {/* Brand Info & Seal (02.png) */}
-          <div className="lg:col-span-5 flex flex-col items-start text-left rtl:text-right rtl:items-start">
-            <div className="flex items-center gap-4 mb-6">
+          <div className="lg:col-span-4 flex flex-col items-start text-left rtl:text-right rtl:items-start">
+            <Link to="/" className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-full bg-white p-1 border-2 border-[#D8B26E] shadow-glow-gold flex items-center justify-center shrink-0">
                 <img
                   src="/assets/02.png"
@@ -44,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
                   Crafted to Look Real • Architectural Quality
                 </span>
               </div>
-            </div>
+            </Link>
 
             <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-6 max-w-sm">
               {footer.tagline}
@@ -55,42 +56,77 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
                 {footer.parentCompany}
               </span>
               <span className="text-[11px] text-white/60">
-                {isRTL ? 'سجل تجاري وترخيص هندسي معتمد لجمهورية مصر العربية ودول الخليج' : 'Commercial Registration & Certified Scale Engineering S.A.E.'}
+                {isRTL ? 'تحالف صناعي مشترك مع سيتي للمجسمات وأوت سكيل (Outscale Models)' : 'Industrial Scale Engineering Alliance with City Scale & Outscale Models'}
               </span>
             </div>
           </div>
 
-          {/* Regional Presence Hubs */}
+          {/* Quick Dedicated Line Navigation */}
           <div className="lg:col-span-3">
+            <h4 className="font-serif text-base font-bold text-[#D8B26E] mb-4">
+              {t.nav.links.visualLines}
+            </h4>
+            <div className="space-y-2 text-xs">
+              <Link
+                to="/lines/replicas"
+                className="block text-white/80 hover:text-[#D8B26E] transition-colors py-1"
+              >
+                • {t.nav.lineDropdown.line1}
+              </Link>
+              <Link
+                to="/lines/monumental"
+                className="block text-white/80 hover:text-[#D8B26E] transition-colors py-1"
+              >
+                • {t.nav.lineDropdown.line2}
+              </Link>
+              <Link
+                to="/lines/smart-tables"
+                className="block text-white/80 hover:text-[#D8B26E] transition-colors py-1"
+              >
+                • {t.nav.lineDropdown.line3}
+              </Link>
+              <Link
+                to="/heritage"
+                className="block text-white/80 hover:text-[#D8B26E] transition-colors py-1"
+              >
+                • {t.nav.links.craft}
+              </Link>
+              <Link
+                to="/portfolio"
+                className="block text-white/80 hover:text-[#D8B26E] transition-colors py-1"
+              >
+                • {t.nav.links.portfolio}
+              </Link>
+              <Link
+                to="/enterprise-roi"
+                className="block text-white/80 hover:text-[#D8B26E] transition-colors py-1"
+              >
+                • {t.nav.links.matrix}
+              </Link>
+            </div>
+          </div>
+
+          {/* Regional Hubs */}
+          <div className="lg:col-span-2">
             <h4 className="font-serif text-base font-bold text-[#D8B26E] mb-4 flex items-center gap-2">
               <MapPin className="w-4 h-4 text-[#BA2B43]" />
-              <span>{isRTL ? 'المراكز الإقليمية المعتمدة' : 'Regional Engineering Hubs'}</span>
+              <span>{isRTL ? 'المراكز الإقليمية' : 'Regional Hubs'}</span>
             </h4>
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-2">
               {footer.locations.map((loc, idx) => (
                 <div
                   key={idx}
-                  className="px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white/90 flex items-center justify-between"
+                  className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-white/90 flex items-center justify-between"
                 >
                   <span className="font-medium">{loc}</span>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 </div>
               ))}
-            </div>
-
-            <div className="mt-4 pt-4 border-t border-white/10">
-              <button
-                onClick={onOpenProposal}
-                className="text-xs text-[#D8B26E] hover:underline font-bold flex items-center gap-1 cursor-pointer"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{isRTL ? 'تحميل الملف التعريفي للشركات 2026' : 'Download 2026 Enterprise Deck'}</span>
-              </button>
             </div>
           </div>
 
           {/* Concierge & Fast Actions */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <h4 className="font-serif text-base font-bold text-[#D8B26E] mb-4 flex items-center gap-2">
               <Phone className="w-4 h-4 text-[#BA2B43]" />
               <span>{footer.contactTitle}</span>
@@ -122,9 +158,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
               </a>
             </div>
 
-            <div className="text-[11px] text-white/50 leading-relaxed">
-              ✦ {isRTL ? 'استشارات سرية للمشاريع الكبرى تحت اتفاقية سرية المعلومات (NDA).' : 'Strict NDAs executed for upcoming concept unveilings and flagship expansions.'}
-            </div>
+            <button
+              onClick={onOpenProposal}
+              className="text-xs text-[#D8B26E] hover:underline font-bold flex items-center gap-1 cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{isRTL ? 'تحميل الملف التعريفي للشركات 2026' : 'Download 2026 Enterprise Deck'}</span>
+            </button>
           </div>
 
         </div>

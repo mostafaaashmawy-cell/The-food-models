@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Sparkles, 
@@ -124,9 +125,7 @@ export const VisualLinesSection: React.FC = () => {
         {/* Tabbed Display Content */}
         <AnimatePresence mode="wait">
           
-          {/* ========================================================= */}
-          {/* TAB 01: LINE 01 HYPER-REALISTIC FOOD REPLICAS (1:1)       */}
-          {/* ========================================================= */}
+          {/* TAB 01: LINE 01 */}
           {activeTab === 'line1' && (
             <motion.div
               key="line1"
@@ -171,13 +170,14 @@ export const VisualLinesSection: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Ideal For Pill */}
-                <div className="p-4 rounded-xl bg-[#F4EAEB] border border-[#BA2B43]/20 text-xs text-[#4E1420]">
-                  <span className="font-bold uppercase tracking-wider block mb-1">
-                    {isRTL ? 'القطاعات المستهدفة:' : 'Ideal Applications:'}
-                  </span>
-                  <span>{t.lines.line1.idealFor}</span>
-                </div>
+                {/* Dedicated Page Link Button */}
+                <Link
+                  to="/lines/replicas"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold w-fit hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
+                >
+                  <span>{t.lines.viewDedicatedPage}</span>
+                  <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                </Link>
               </div>
 
               {/* Interactive Before / After Comparison Showcase */}
@@ -202,7 +202,6 @@ export const VisualLinesSection: React.FC = () => {
                     onClick={(e) => handleSliderMove(e.clientX)}
                     className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden cursor-ew-resize select-none border border-[#4E1420]/15"
                   >
-                    {/* Layer 1: Real Chef Plating (Base) */}
                     <img
                       src="/food/burger.jpg"
                       alt="Real Culinary Dish"
@@ -212,7 +211,6 @@ export const VisualLinesSection: React.FC = () => {
                       {t.lines.line1.sliderRealLabel}
                     </div>
 
-                    {/* Layer 2: Artisan Replica (Clipped) */}
                     <div
                       className="absolute inset-0 overflow-hidden"
                       style={{ width: `${sliderPosition}%` }}
@@ -228,7 +226,6 @@ export const VisualLinesSection: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Divider Handle */}
                     <div
                       className="absolute top-0 bottom-0 w-1 bg-white shadow-2xl z-20 flex items-center justify-center -translate-x-1/2"
                       style={{ left: `${sliderPosition}%` }}
@@ -247,9 +244,7 @@ export const VisualLinesSection: React.FC = () => {
             </motion.div>
           )}
 
-          {/* ========================================================= */}
-          {/* TAB 02: LINE 02 MONUMENTAL OUTDOOR FIBERGLASS SCULPTURES  */}
-          {/* ========================================================= */}
+          {/* TAB 02: LINE 02 */}
           {activeTab === 'line2' && (
             <motion.div
               key="line2"
@@ -259,7 +254,6 @@ export const VisualLinesSection: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
             >
-              {/* Text / Features Column */}
               <div className="lg:col-span-6 flex flex-col gap-6">
                 <div>
                   <span className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#F4EAEB] text-[#BA2B43] mb-3 border border-[#BA2B43]/20">
@@ -277,7 +271,6 @@ export const VisualLinesSection: React.FC = () => {
                   {t.lines.line2.overview}
                 </p>
 
-                {/* Key Benefits */}
                 <div className="space-y-4 pt-2">
                   {t.lines.line2.features.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white border border-[#4E1420]/10 shadow-sm">
@@ -294,13 +287,14 @@ export const VisualLinesSection: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Ideal For Pill */}
-                <div className="p-4 rounded-xl bg-[#F4EAEB] border border-[#BA2B43]/20 text-xs text-[#4E1420]">
-                  <span className="font-bold uppercase tracking-wider block mb-1">
-                    {isRTL ? 'القطاعات المستهدفة:' : 'Ideal Applications:'}
-                  </span>
-                  <span>{t.lines.line2.idealFor}</span>
-                </div>
+                {/* Dedicated Page Link Button */}
+                <Link
+                  to="/lines/monumental"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold w-fit hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
+                >
+                  <span>{isRTL ? 'استكشف مشاريع Outscale ومواصفات المنحوتات العملاقة ←' : 'Explore Outscale Models Alliance & Landmark Projects →'}</span>
+                  <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                </Link>
               </div>
 
               {/* Interactive Monumental Scale Simulator Column */}
@@ -321,10 +315,7 @@ export const VisualLinesSection: React.FC = () => {
                     {t.lines.line2.sliderHint}
                   </p>
 
-                  {/* Interactive Scale Canvas Comparison */}
                   <div className="relative w-full h-72 sm:h-80 bg-gradient-to-b from-[#F4EAEB]/40 to-[#FAF8F5] rounded-2xl border border-[#4E1420]/15 flex items-end justify-center px-6 pb-6 gap-8 overflow-hidden">
-                    
-                    {/* Background Height Grid Markings */}
                     <div className="absolute inset-x-0 bottom-0 top-0 flex flex-col justify-between pointer-events-none opacity-20 px-4">
                       <div className="border-b border-dashed border-[#4E1420] w-full text-[10px] text-right">10m</div>
                       <div className="border-b border-dashed border-[#4E1420] w-full text-[10px] text-right">7.5m</div>
@@ -332,7 +323,6 @@ export const VisualLinesSection: React.FC = () => {
                       <div className="border-b border-dashed border-[#4E1420] w-full text-[10px] text-right">2.5m</div>
                     </div>
 
-                    {/* Human Silhouette Comparison (Fixed at 1.8m -> ~45px height) */}
                     <div className="flex flex-col items-center z-10">
                       <div className="h-[45px] w-6 bg-[#1C1917] rounded-t-full flex items-center justify-center opacity-70">
                         <span className="text-[7px] text-white font-bold">1.8m</span>
@@ -342,7 +332,6 @@ export const VisualLinesSection: React.FC = () => {
                       </span>
                     </div>
 
-                    {/* Scaled Monument Sculpture */}
                     <div className="flex flex-col items-center z-10">
                       <motion.div
                         animate={{ height: `${Math.min(240, monumentScale * 24)}px` }}
@@ -350,7 +339,7 @@ export const VisualLinesSection: React.FC = () => {
                         className="w-32 sm:w-44 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#BA2B43] relative"
                       >
                         <img
-                          src="/food/Pizza.PNG"
+                          src="/outdoor/danette-chocolate.webp"
                           alt="Monumental Food Model"
                           className="w-full h-full object-cover"
                         />
@@ -361,13 +350,11 @@ export const VisualLinesSection: React.FC = () => {
                         </div>
                       </motion.div>
                       <span className="text-[10px] font-bold text-[#BA2B43] mt-1 whitespace-nowrap">
-                        {isRTL ? 'مجسم سيتي للمجسمات المعماري' : 'City Scale Monumental Sculpture'}
+                        {isRTL ? 'مجسم سيتي للمجسمات المعماري' : 'City Scale & Outscale Monument'}
                       </span>
                     </div>
-
                   </div>
 
-                  {/* Drag Range Input */}
                   <div className="mt-6">
                     <div className="flex justify-between text-xs font-bold text-[#4E1420] mb-2">
                       <span>1 Meter (Entrance)</span>
@@ -384,25 +371,12 @@ export const VisualLinesSection: React.FC = () => {
                       className="w-full h-2 bg-[#F4EAEB] rounded-lg appearance-none cursor-pointer accent-[#BA2B43]"
                     />
                   </div>
-
-                  {/* Engineering specs pill */}
-                  <div className="mt-4 pt-4 border-t border-[#4E1420]/10 flex flex-wrap gap-2 text-[11px] text-[#4E1420]/80">
-                    <span className="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#BA2B43]/20 flex items-center gap-1 font-semibold">
-                      <Sun className="w-3 h-3 text-[#BA2B43]" /> UV Blocking Polyurethane
-                    </span>
-                    <span className="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#BA2B43]/20 flex items-center gap-1 font-semibold">
-                      <Flame className="w-3 h-3 text-[#BA2B43]" /> Wind-Load Tested (140 km/h)
-                    </span>
-                  </div>
-
                 </div>
               </div>
             </motion.div>
           )}
 
-          {/* ========================================================= */}
-          {/* TAB 03: LINE 03 SMART INTERACTIVE TOUCH DINING TABLES     */}
-          {/* ========================================================= */}
+          {/* TAB 03: LINE 03 */}
           {activeTab === 'line3' && (
             <motion.div
               key="line3"
@@ -412,7 +386,6 @@ export const VisualLinesSection: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
             >
-              {/* Text / Features Column */}
               <div className="lg:col-span-6 flex flex-col gap-6">
                 <div>
                   <span className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#F4EAEB] text-[#BA2B43] mb-3 border border-[#BA2B43]/20">
@@ -430,7 +403,6 @@ export const VisualLinesSection: React.FC = () => {
                   {t.lines.line3.overview}
                 </p>
 
-                {/* Key Benefits */}
                 <div className="space-y-4 pt-2">
                   {t.lines.line3.features.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white border border-[#4E1420]/10 shadow-sm">
@@ -447,13 +419,14 @@ export const VisualLinesSection: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Ideal For Pill */}
-                <div className="p-4 rounded-xl bg-[#F4EAEB] border border-[#BA2B43]/20 text-xs text-[#4E1420]">
-                  <span className="font-bold uppercase tracking-wider block mb-1">
-                    {isRTL ? 'القطاعات المستهدفة:' : 'Ideal Applications:'}
-                  </span>
-                  <span>{t.lines.line3.idealFor}</span>
-                </div>
+                {/* Dedicated Page Link Button */}
+                <Link
+                  to="/lines/smart-tables"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold w-fit hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
+                >
+                  <span>{isRTL ? 'شاهد مقاطع الفيديو الحية والمواصفات الكاملة للطاولات ←' : 'Watch Live Video Footage & Hardware Specifications →'}</span>
+                  <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                </Link>
               </div>
 
               {/* Interactive Smart Table Simulator */}
@@ -465,7 +438,6 @@ export const VisualLinesSection: React.FC = () => {
                     boxShadow: `0 25px 60px -15px ${ambientColor}40`,
                   }}
                 >
-                  {/* Simulator Control Tabs */}
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                     <span className="text-xs font-bold uppercase tracking-wider text-[#D8B26E] flex items-center gap-1.5">
                       <Tablet className="w-4 h-4 text-[#D8B26E]" />
@@ -503,15 +475,11 @@ export const VisualLinesSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Simulated Glass Tabletop Surface */}
                   <div
                     onClick={handleTableTouch}
-                    className="relative w-full h-80 rounded-2xl border-2 border-white/20 bg-gradient-to-b from-black/80 to-[#2A0810]/70 overflow-hidden cursor-pointer select-none p-6 flex flex-col justify-between"
-                    style={{
-                      borderColor: ambientColor,
-                    }}
+                    className="relative w-full h-80 rounded-2xl border-2 bg-gradient-to-b from-black/80 to-[#2A0810]/70 overflow-hidden cursor-pointer select-none p-6 flex flex-col justify-between"
+                    style={{ borderColor: ambientColor }}
                   >
-                    {/* Ripple Animations on Surface Touch */}
                     {ripples.map((ripple) => (
                       <motion.span
                         key={ripple.id}
@@ -530,13 +498,8 @@ export const VisualLinesSection: React.FC = () => {
                       />
                     ))}
 
-                    {/* Content inside the Table Screen based on mode */}
                     {simMode === 'menu' && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="h-full flex flex-col justify-between"
-                      >
+                      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="h-full flex flex-col justify-between">
                         <div className="flex items-center justify-between text-xs text-white/80 border-b border-white/10 pb-2">
                           <span className="font-mono text-[#D8B26E]">TABLE 07 • VIP LOUNGE</span>
                           <span className="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px]">
@@ -573,11 +536,7 @@ export const VisualLinesSection: React.FC = () => {
                     )}
 
                     {simMode === 'arcade' && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="h-full flex flex-col items-center justify-center text-center p-4"
-                      >
+                      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="h-full flex flex-col items-center justify-center text-center p-4">
                         <div className="w-14 h-14 rounded-full bg-[#BA2B43]/30 border border-[#BA2B43] flex items-center justify-center text-[#D8B26E] mb-3 animate-bounce">
                           <Gamepad2 className="w-7 h-7" />
                         </div>
@@ -594,11 +553,7 @@ export const VisualLinesSection: React.FC = () => {
                     )}
 
                     {simMode === 'lighting' && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="h-full flex flex-col justify-center gap-4 text-center"
-                      >
+                      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="h-full flex flex-col justify-center gap-4 text-center">
                         <h5 className="text-white font-bold text-sm">
                           {isRTL ? 'اختر نمط الإضاءة المحيطية للطاولة' : 'Select Dynamic Ambiance Glow'}
                         </h5>
@@ -628,10 +583,6 @@ export const VisualLinesSection: React.FC = () => {
                       </motion.div>
                     )}
                   </div>
-
-                  <p className="text-[11px] text-white/60 text-center mt-3 font-mono">
-                    ✦ {isRTL ? 'زجاج أمان مقسّى عالي التحمل ضد السوائل والصدمات IP-65' : 'IP-65 Waterproof Tempered Safety Glass • Commercial Grade 24/7'}
-                  </p>
                 </div>
               </div>
             </motion.div>
