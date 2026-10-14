@@ -62,8 +62,8 @@ export const ContactPage: React.FC = () => {
               <MapPin className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-[11px] text-[#1C1917]/60 block font-semibold">Engineering Hubs</span>
-              <span className="text-xs font-bold text-[#4E1420]">Cairo • Riyadh • Dubai</span>
+              <span className="text-[11px] text-[#1C1917]/60 block font-semibold">{isRTL ? 'المراكز الهندسية' : 'Engineering Hubs'}</span>
+              <span className="text-xs font-bold text-[#4E1420]">{isRTL ? 'مصر • المملكة العربية السعودية' : 'Egypt • Saudi Arabia'}</span>
             </div>
           </div>
         </div>

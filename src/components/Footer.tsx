@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
                 {footer.parentCompany}
               </span>
               <span className="text-[11px] text-white/60">
-                {isRTL ? 'تحالف صناعي مشترك مع سيتي للمجسمات وأوت سكيل (Outscale Models)' : 'Industrial Scale Engineering Alliance with City Scale & Outscale Models'}
+                {isRTL ? 'إحدى الشركات المتخصصة التابعة لمجموعة سيتي للمجسمات المعمارية (City Scale Models)' : 'Specialized Subsidiary of City Scale Models Engineering S.A.E.'}
               </span>
             </div>
           </div>
@@ -96,12 +96,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
                 className="block text-white/80 hover:text-[#D8B26E] transition-colors py-1"
               >
                 • {t.nav.links.portfolio}
-              </Link>
-              <Link
-                to="/enterprise-roi"
-                className="block text-white/80 hover:text-[#D8B26E] transition-colors py-1"
-              >
-                • {t.nav.links.matrix}
               </Link>
             </div>
           </div>

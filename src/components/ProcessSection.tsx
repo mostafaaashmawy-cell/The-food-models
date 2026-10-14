@@ -1,17 +1,19 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
-import { Compass, Scan, Sparkles, Truck, CheckCircle2 } from 'lucide-react';
+import { ClipboardList, Compass, Layers, Cog, Truck, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export const ProcessSection: React.FC = () => {
   const { t, isRTL } = useLanguage();
   const process = t.process;
 
   const stepIcons = [
-    <Compass className="w-6 h-6 text-[#BA2B43]" />,
-    <Scan className="w-6 h-6 text-[#D8B26E]" />,
-    <Sparkles className="w-6 h-6 text-[#BA2B43]" />,
-    <Truck className="w-6 h-6 text-[#D8B26E]" />,
+    <ClipboardList className="w-6 h-6 text-[#BA2B43]" />,
+    <Compass className="w-6 h-6 text-[#D8B26E]" />,
+    <Layers className="w-6 h-6 text-[#BA2B43]" />,
+    <Cog className="w-6 h-6 text-[#D8B26E]" />,
+    <Truck className="w-6 h-6 text-[#BA2B43]" />,
+    <ShieldCheck className="w-6 h-6 text-[#D8B26E]" />,
   ];
 
   return (
@@ -32,8 +34,8 @@ export const ProcessSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 4-Stage Roadmap Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
+        {/* 6-Stage Roadmap Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 relative">
           
           {process.steps.map((step, idx) => (
             <motion.div

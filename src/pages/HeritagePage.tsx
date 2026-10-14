@@ -23,11 +23,25 @@ export const HeritagePage: React.FC = () => {
             : 'City Scale Models Pedigree: Architectural Mastery for Fine Dining'}
         </h1>
 
-        <p className="text-base sm:text-lg text-[#1C1917]/75 max-w-3xl leading-relaxed">
+        <p className="text-base sm:text-lg text-[#1C1917]/75 max-w-3xl leading-relaxed mb-6">
           {isRTL
-            ? 'منذ عام 2011، تصدّرت سيتي للمجسمات المشهد في الشرق الأوسط في تنفيذ مجسمات أضخم المشاريع القومية والعمرانية. نضع اليوم هذه الترسانة الصناعية بين أيدي كبرى علامات الأغذية والمشروبات.'
-            : 'For over 15 years, City Scale Models has been the Middle East authority in microscopic architectural accuracy. We now deploy this exact industrial precision to elevate premier gastronomy and enterprise F&B brands.'}
+            ? 'منذ عام 1998 ولأكثر من 28 عاماً، تصدّرت سيتي للمجسمات المشهد في الشرق الأوسط في تنفيذ مجسمات أضخم المشاريع القومية والعمرانية. نضع اليوم هذه الترسانة الصناعية بين أيدي كبرى علامات الأغذية والمشروبات.'
+            : 'For over 28 years (since 1998), City Scale Models has been the Middle East authority in microscopic architectural accuracy. We now deploy this exact industrial precision to elevate premier gastronomy and enterprise F&B brands.'}
         </p>
+
+        {/* Official City Scale Link */}
+        <div className="flex flex-wrap items-center gap-4">
+          <a
+            href="https://city-scale.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#4E1420] text-[#D8B26E] text-xs font-bold border border-[#D8B26E]/40 hover:bg-[#350B14] transition-all shadow-md group"
+          >
+            <Building className="w-4 h-4 text-[#D8B26E]" />
+            <span>{isRTL ? 'زيارة الموقع الرسمي لمجموعة سيتي للمجسمات (city-scale.com)' : 'Visit City Scale Models Official Website (city-scale.com)'}</span>
+            <ArrowRight className="w-4 h-4 rtl:rotate-180 text-[#D8B26E] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
+          </a>
+        </div>
       </div>
 
       <HeritageSection />

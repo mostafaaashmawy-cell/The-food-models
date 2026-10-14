@@ -232,18 +232,12 @@ export interface Translations {
     fields: {
       name: string;
       namePlaceholder: string;
+      title: string;
+      titlePlaceholder: string;
       company: string;
       companyPlaceholder: string;
-      branches: string;
-      branchOptions: string[];
-      lines: string;
-      lineOptions: { id: string; label: string }[];
-      city: string;
-      cityOptions: string[];
       phone: string;
       phonePlaceholder: string;
-      notes: string;
-      notesPlaceholder: string;
     };
     submitButton: string;
     submitting: string;
@@ -296,7 +290,7 @@ export const content: Record<Language, Translations> = {
         line3Desc: "Touch tabletop screens, 3D menus & interactive gaming",
       },
       cta: "Request Private Briefing",
-      proposalButton: "Executive Concept Deck",
+      proposalButton: "Request a Quote",
     },
     hero: {
       badge: "A Subsidiary of City Scale Models ✦ Architectural Precision Meets Culinary Art",
@@ -305,21 +299,21 @@ export const content: Record<Language, Translations> = {
       primaryCta: "Commission a Masterpiece",
       secondaryCta: "Explore The 3 Visual Lines ↓",
       trustPoints: {
-        years: { val: "15+ Years", label: "Industrial & Architectural Modeling Pedigree" },
+        years: { val: "28+ Years", label: "Industrial & Architectural Modeling Pedigree" },
         fidelity: { val: "100%", label: "Visual Fidelity Indistinguishable from Real Cuisine" },
         engineering: { val: "Tier-1 Icons", label: "Serving Premier Hospitality & Enterprise F&B" },
       },
-      stampText: "100% REAL VISUAL FIDELITY • CITY SCALE GUARANTEE • ARCHITECTURAL QUALITY • ",
+      stampText: "100% REAL VISUAL FIDELITY • 28+ YEARS CITY SCALE GUARANTEE • ARCHITECTURAL QUALITY • ",
     },
     heritage: {
       tag: "THE CITY SCALE ADVANTAGE",
       headline: "Backed by Egypt’s Foremost Authority in Scale Modeling",
       quote: "“A replica is only as compelling as the precision behind it.”",
-      p1: "For over a decade and a half, City Scale Models has engineered the region’s most complex mega-project masterplans, high-rise architectural models, and industrial replicas with microscopic accuracy.",
-      p2: "The Food Models was born from this exact engineering DNA. We harnessed the industrial laser-cutting bays, photogrammetry scanning rigs, automotive paint ovens, and master sculptors of City Scale, directing their precision straight into the culinary and hospitality realm.",
+      p1: "For over 28 years (founded in 1998), City Scale Models has engineered the region’s most complex mega-project masterplans, high-rise architectural models, and industrial replicas with microscopic accuracy.",
+      p2: "The Food Models was born from this exact engineering DNA. We harnessed the industrial laser-cutting bays, photogrammetry scanning rigs, industrial thermal curing ovens, and master sculptors of City Scale, directing their precision straight into the culinary and hospitality realm.",
       p3: "When you partner with The Food Models, you are not hiring a novelty prop-maker. You are commissioning an industrial design house capable of translating your signature menu and brand iconography into permanent, museum-grade art.",
       stats: {
-        years: { number: "15+", label: "Years Industrial Heritage", desc: "Leading scale architecture in Egypt & GCC" },
+        years: { number: "28+", label: "Years Industrial Heritage", desc: "Leading scale architecture in Egypt & Saudi Arabia" },
         fidelity: { number: "100%", label: "Micron-Level Fidelity", desc: "True moisture, glaze & crumb textures" },
         scale: { number: "∞", label: "Scale Feasibility", desc: "From 1:1 miniatures to 10+ meter monuments" },
         freshness: { number: "365", label: "Days Zero Spoilage", desc: "Permanent mouth-watering freshness guaranteed" },
@@ -359,7 +353,7 @@ export const content: Record<Language, Translations> = {
         badge: "LINE 02: SCALE MONUMENTALISM",
         title: "Monumental Outdoor Fiberglass Models",
         tagline: "Turn your brand into an unmissable urban landmark.",
-        overview: "Scale has a psychological power that 2D signage can never replicate. Powered by Outscale Models (outscale-models.com) and City Scale engineering, our monumental outdoor models combine hot-dip galvanized steel framing, FRP polymer molding, and automotive polyurethane curing to withstand extreme sandstorms and desert heat.",
+        overview: "Scale has a psychological power that 2D signage can never replicate. Powered by City Scale Models (city-scale.com) engineering, our monumental outdoor models combine hot-dip galvanized steel framing, FRP polymer molding, and industrial thermal curing ovens to withstand extreme sandstorms and desert heat.",
         features: [
           {
             title: "Unrestricted Monumental Scale",
@@ -367,7 +361,7 @@ export const content: Record<Language, Translations> = {
           },
           {
             title: "Extreme Middle East Weather Resilience",
-            desc: "Coated with multi-layer UV-blocking automotive polyurethane lacquers built to withstand extreme summer desert heat, sandstorms, and coastal humidity.",
+            desc: "Coated with multi-layer UV-blocking industrial polyurethane thermal finishes built to withstand extreme summer desert heat, sandstorms, and coastal humidity.",
           },
           {
             title: "Certified Structural Steel Engineering",
@@ -437,15 +431,15 @@ export const content: Record<Language, Translations> = {
       },
     },
     outscaleOutdoor: {
-      tag: "LINE 02 DEEP DIVE • POWERED BY OUTSCALE MODELS",
+      tag: "LINE 02 DEEP DIVE • MONUMENTAL OUTDOOR SCULPTURES",
       headline: "Monumental Outdoor Food Sculptures & Urban Landmarks",
       subtitle: "Engineering massive, weather-proof brand beacons that command urban skylines and generate viral foot traffic.",
-      heritageBadge: "Official Engineering Alliance with Outscale Models (outscale-models.com)",
-      introParagraph: "Scale possesses a psychological dominance that no 2D billboard can rival. Backed by Outscale Models—specialists in large-scale outdoor modeling, monumental sculptures, and mega-installations across Egypt, China, and the GCC—The Food Models engineers permanent outdoor culinary sculptures engineered to survive the harshest desert climates while acting as perpetual selfie magnets for your brand.",
+      heritageBadge: "Official Engineering by City Scale Models (city-scale.com)",
+      introParagraph: "Scale possesses a psychological dominance that no 2D billboard can rival. Backed by City Scale Models—with 28+ years of engineering leadership in large-scale outdoor modeling, monumental sculptures, and mega-installations across Egypt, Saudi Arabia, and internationally—The Food Models engineers permanent outdoor culinary sculptures engineered to survive the harshest desert climates while acting as perpetual selfie magnets for your brand.",
       doctorBio: {
         title: "Artistic Direction & Public Sculpture Leadership",
         name: "Dr. Ahmad Mousa",
-        role: "Chief Public Sculptor & Artistic Consultant (Outscale Models Alliance)",
+        role: "Chief Public Sculptor & Artistic Consultant (City Scale Models Leadership)",
         degrees: [
           "Ph.D. in Public Sculpture (Sculpture & Environmental Relation), Faculty of Fine Arts, Helwan University",
           "Master’s Degree in Public Sculpture (Specialization in Figurative Sculpture)",
@@ -463,10 +457,10 @@ export const content: Record<Language, Translations> = {
         {
           title: "Danette Giant Chocolate Dessert Landmark",
           client: "Danone / Danette",
-          desc: "A massive, hyper-detailed outdoor chocolate cup and dipping dessert sculpture executed with automotive mirror glaze and realistic fluid cream curls.",
+          desc: "A massive, hyper-detailed outdoor chocolate cup and dipping dessert sculpture executed with high-gloss mirror glaze and realistic fluid cream curls.",
           image: "/outdoor/danette-chocolate.webp",
           scale: "Monumental Outdoor Scale",
-          materials: "FRP Polymer, UV Automotive Clearcoat, Steel Subframe",
+          materials: "FRP Polymer, UV Industrial Clearcoat, Steel Subframe",
         },
         {
           title: "Sunbites Giant Snack Pack Facade Model",
@@ -474,7 +468,15 @@ export const content: Record<Language, Translations> = {
           desc: "Architectural outdoor sculpted snack bag and exploding grain textures engineered for high-visibility commercial campaign activations.",
           image: "/outdoor/sunbites-chips.webp",
           scale: "3.5m Architectural Height",
-          materials: "Fiberglass Composite, Polyurethane Automotive Pigments",
+          materials: "Fiberglass Composite, Thermal Curing Resins",
+        },
+        {
+          title: "Playz Chipsy Distinctive Outdoor Display",
+          client: "PepsiCo / Chipsy",
+          desc: "Dynamic sculpted brand activation featuring oversized chips and vibrant packaging created for high-traffic public installations.",
+          image: "/outdoor/chipsy-playz.png",
+          scale: "Colossal Outdoor Facade Display",
+          materials: "Cast Polymer Resin, Weatherproof Steel Frame",
         },
         {
           title: "Nescafé Giant Coffee Cup & Beans Landmark",
@@ -486,11 +488,67 @@ export const content: Record<Language, Translations> = {
         },
         {
           title: "FRP Monumental Sculptures & Architectural Art",
-          client: "Outscale International Projects",
-          desc: "Heavy-duty fiberglass reinforced polymers (FRP) engineered in partnership with Outscale's international execution centers.",
+          client: "City Scale International Projects",
+          desc: "Heavy-duty fiberglass reinforced polymers (FRP) engineered in City Scale's specialized industrial execution centers.",
           image: "/outdoor/frp-sculpture.webp",
           scale: "Multi-Story Capacity",
           materials: "Marine-Grade Resins, Wind-Load Certified 140km/h",
+        },
+        {
+          title: "Vacuum-Formed Outdoor Architectural Models",
+          client: "City Scale Engineering",
+          desc: "Precision thermoformed exterior architectural facades engineered for extreme dimensional stability and sleek commercial finishes.",
+          image: "/outdoor/vacuum-formed.webp",
+          scale: "Bespoke Scale Facades",
+          materials: "Heavy-Duty Thermoformed Polymers, Protective Clearcoat",
+        },
+        {
+          title: "Monumental Themed Dragon Public Sculpture",
+          client: "Theme Park & Entertainment District",
+          desc: "Colossal mythical creature crafted with hyper-detailed scaly texturing and internal steel load-bearing truss system.",
+          image: "/outdoor/dragon-sculpture.webp",
+          scale: "6+ Meters Sculptural Span",
+          materials: "Internal Structural Steel Skeleton, Hand-Layered FRP",
+        },
+        {
+          title: "Adam's World Monumental Theme Park Landmark",
+          client: "Adam's World Family Destination",
+          desc: "Multi-figure monumental cartoon and culinary theme park attraction engineered to withstand year-round direct sunlight.",
+          image: "/outdoor/adams-world.webp",
+          scale: "Multi-Figure Monumental Display",
+          materials: "UV-Resistant Polyurethane, Armored Polymer Matrix",
+        },
+        {
+          title: "Colossal Atlas Bronze-Finish Public Sculpture",
+          client: "City Scale Public Arts Division",
+          desc: "Museum-grade monumental heroic statue featuring classical bronze patina executed with lightweight structural polymers.",
+          image: "/outdoor/atlas-statue.webp",
+          scale: "5 Meters Heroic Scale",
+          materials: "Cold-Cast Bronze Polymer, Galvanized Mounting Plates",
+        },
+        {
+          title: "Cultural & Figurative Public Monument",
+          client: "Civic Public Arts Commission",
+          desc: "Realistic figurative public sculpture engineered for cultural plazas, cultural institutions, and high-prestige headquarters.",
+          image: "/outdoor/monument-sobhi.webp",
+          scale: "Life-and-a-Half Heroic Scale",
+          materials: "Sculptural Composite Resin, Anti-Weather Sealants",
+        },
+        {
+          title: "Liberty Monumental Public Sculpture",
+          client: "Civic Monumental Commission",
+          desc: "Modern allegorical monument engineered for major municipal plazas and roundabouts under the artistic direction of Dr. Ahmad Mousa.",
+          image: "/outdoor/liberty-monument.webp",
+          scale: "Monumental Public Height",
+          materials: "High-Tensile Composite, Dr. Ahmad Mousa Curation",
+        },
+        {
+          title: "Contemporary Curated Public Artworks",
+          client: "Fine Arts & Architecture Alliance",
+          desc: "Abstract and representational environmental sculptures integrated with civic fountains and landscaped commercial plazas.",
+          image: "/outdoor/ahmad-mousa-sculpture.webp",
+          scale: "Custom Architectural Dimensions",
+          materials: "Multi-Medium Architectural Resins & Stainless Chassis",
         },
       ],
       engineeringSpecs: [
@@ -500,9 +558,9 @@ export const content: Record<Language, Translations> = {
           items: ["Wind-load calculated up to 140 km/h gusts", "Baseplate anchored with seismic-rated chemical bolts", "Engineered lifting hooks for crane turnkey deployment"],
         },
         {
-          title: "Automotive Paint Oven Finishing",
-          desc: "Finished inside dedicated automotive spray booths with multi-stage polyurethane lacquers that resist thermal expansion and UV-induced chalking.",
-          items: ["UV400 chemical inhibitors prevent pigment bleaching", "Hydrophobic ceramic sealants resist road grim & sandstorms", "Scratch-resistant clearcoats withstand public contact"],
+          title: "Industrial Thermal Oven Finishing",
+          desc: "Finished inside dedicated industrial thermal curing chambers with multi-stage polyurethane lacquers that resist thermal expansion and UV-induced chalking.",
+          items: ["UV400 chemical inhibitors prevent pigment bleaching", "Hydrophobic ceramic sealants resist road grime & sandstorms", "Scratch-resistant clearcoats withstand public contact"],
         },
         {
           title: "Illumination & Kinetic Integration",
@@ -512,8 +570,8 @@ export const content: Record<Language, Translations> = {
       ],
       ctaBox: {
         title: "Commission a Monumental Landmark for Your Brand",
-        desc: "Transform your flagship drive-thru or mall facade into the most photographed location in the city.",
-        btn: "Consult with Our Structural Sculpture Team",
+        desc: "Transform your flagship drive-thru or commercial facade into the most photographed location in Egypt and Saudi Arabia.",
+        btn: "Request Quotation for Monumental Sculpture",
       },
     },
     smartTablesPage: {
@@ -618,7 +676,7 @@ export const content: Record<Language, Translations> = {
           {
             metric: "Parent Engineering Heritage",
             generic: "Small local crafts workshops, unregulated carpentry, or imported plastic props.",
-            theFoodModels: "City Scale Models (15+ Years Industrial Scale Engineering on Mega-Projects).",
+            theFoodModels: "City Scale Models (28+ Years Industrial Scale Engineering on Mega-Projects).",
             advantage: "Architectural Precision",
           },
           {
@@ -630,7 +688,7 @@ export const content: Record<Language, Translations> = {
           {
             metric: "Material Science & Durability",
             generic: "Brittle plaster and low-grade resins that crack, warp, and yellow under light within months.",
-            theFoodModels: "Automotive-grade polyurethane coatings, UV-inhibiting polymers, and heat-resistant resin matrices.",
+            theFoodModels: "Industrial-grade polyurethane coatings, UV-inhibiting polymers, and heat-resistant resin matrices.",
             advantage: "Permanent 365 Days Freshness",
           },
           {
@@ -650,32 +708,44 @@ export const content: Record<Language, Translations> = {
     },
     process: {
       tag: "METHODOLOGY",
-      title: "Our 4-Stage Architectural Delivery Process",
-      subtitle: "From culinary identity audit to turnkey white-glove deployment across Egypt and the GCC.",
+      title: "From Culinary Concept to Sustainable Architectural Masterpiece",
+      subtitle: "Six comprehensive stages guaranteeing flawless precision, delivery, and ongoing support across Egypt and Saudi Arabia.",
       steps: [
         {
           num: "01",
-          title: "The Culinary & Brand Audit",
-          desc: "We meet with your executive culinary team, brand directors, and interior architects to analyze plating nuances, lighting environments, and revenue goals.",
-          deliverable: "Custom Material Matrix & Visual Goal Deck",
+          title: "Full Branch & Menu Analysis",
+          desc: "Detailed audit of all menus across every branch, analyzing viewing angles, ambient lighting, and customer traffic flows to target highest-margin signature dishes.",
+          deliverable: "Visual Audit Report & Signature Dish Selection",
         },
         {
           num: "02",
-          title: "3D Photogrammetry & Digital CAD Blueprint",
-          desc: "Utilizing City Scale’s multi-angle scanning rigs, we capture millimeter-accurate geometry of your real culinary items before producing technical CAD blueprints.",
-          deliverable: "High-Resolution 3D Mesh & Scale Schematics",
+          title: "Comprehensive Product & Branch Plan",
+          desc: "Architectural distribution blueprints and scheduling to manufacture and synchronize replicas across your entire regional branch network.",
+          deliverable: "Master Deployment Blueprint & Multi-Branch Schedule",
         },
         {
           num: "03",
-          title: "Master Artisan Fabrication",
-          desc: "Hand-painted multi-layer glazes, automotive paint curing ovens, food-grade silicone molds, and internal galvanized steel framing executed by senior artisans.",
-          deliverable: "Handcrafted Masterpiece Undergoing Quality Audit",
+          title: "Product Samples & Prototype Approval",
+          desc: "Fabricating high-fidelity physical sample prototypes for executive review, color matching, and tactile texture sign-off with your culinary leadership.",
+          deliverable: "Physical Certified Sample & Master Specification Sign-Off",
         },
         {
           num: "04",
-          title: "Turnkey White-Glove Deployment",
-          desc: "Professional on-site mounting, structural anchoring, vitrine integration, and full hardware/software calibration anywhere in Egypt and the Middle East.",
-          deliverable: "Permanent Landmark Installation & Lifetime Warranty",
+          title: "Commencing Precision Manufacturing",
+          desc: "Launching full-scale fabrication inside City Scale industrial facilities using architectural FRP polymers, industrial curing ovens, and master hand-detailing.",
+          deliverable: "Structural Integrity & Quality Assurance Certificates",
+        },
+        {
+          num: "05",
+          title: "Turnkey Delivery & Installation",
+          desc: "Armored transit and on-site deployment by specialized engineering technicians across branches in Egypt and Saudi Arabia.",
+          deliverable: "On-Site Turnkey Handover & Commissioning Protocol",
+        },
+        {
+          num: "06",
+          title: "Maintenance & Follow-Up",
+          desc: "Scheduled detailing cycles, protective recoating, and structural inspections to preserve perpetual culinary freshness and gloss for years to come.",
+          deliverable: "Extended Warranty Coverage & Periodic Service Schedule",
         },
       ],
     },
@@ -744,11 +814,11 @@ export const content: Record<Language, Translations> = {
           id: "danette-chocolate-outdoor",
           title: "Danette Giant Chocolate Dessert Landmark",
           category: "sculptures",
-          desc: "Monumental outdoor fiberglass dessert landmark engineered with Outscale Models for extreme desert UV.",
+          desc: "Monumental outdoor fiberglass dessert landmark engineered with City Scale Models for extreme desert UV.",
           image: "/outdoor/danette-chocolate.webp",
-          tags: ["Monumental Scale", "FRP Polymer", "Automotive Cured"],
+          tags: ["Monumental Scale", "FRP Polymer", "Thermal Cured"],
           scale: "Monumental Scale",
-          finish: "Automotive Polyurethane UV Lacquer",
+          finish: "Industrial Polyurethane UV Lacquer",
         },
         {
           id: "sunbites-outdoor-facade",
@@ -758,7 +828,7 @@ export const content: Record<Language, Translations> = {
           image: "/outdoor/sunbites-chips.webp",
           tags: ["Outdoor Beacon", "Steel Skeleton", "Wind Certified"],
           scale: "3.5m Architectural Height",
-          finish: "Weatherproof Automotive Coating",
+          finish: "Weatherproof Industrial Coating",
         },
         {
           id: "nescafe-giant-mug",
@@ -766,7 +836,7 @@ export const content: Record<Language, Translations> = {
           category: "sculptures",
           desc: "Multi-meter monumental red mug featuring hand-textured froth and oversized coffee beans.",
           image: "/outdoor/nescafe-coffee.webp",
-          tags: ["Landmark Beacon", "Drive-Thru Centerpiece", "Outscale Alliance"],
+          tags: ["Landmark Beacon", "Drive-Thru Centerpiece", "City Scale Engineering"],
           scale: "4+ Meters Total Height",
           finish: "Galvanized Core & Marine Resin",
         },
@@ -827,30 +897,19 @@ export const content: Record<Language, Translations> = {
       title: "Ready to Make Your Brand the Undisputed Icon of the Industry?",
       intro: "Our bespoke commissions are strictly engineered for brands that refuse to look ordinary. Because of our uncompromising craft and engineering depth, we accept a selective roster of enterprise projects each quarter.",
       ndaBadge: "Strict Non-Disclosure Agreement (NDA) provided upon initial briefing.",
-      formTitle: "Request a VIP Project Briefing",
+      formTitle: "Request an Executive Quotation & Project Briefing",
       formSubtitle: "Complete the briefing form below. Our executive engineering director will connect within 24 hours.",
       fields: {
-        name: "Full Name & Corporate Title",
-        namePlaceholder: "e.g., Tarek Mansour — VP of Brand Development",
-        company: "Restaurant Brand / Enterprise Group",
+        name: "Full Name",
+        namePlaceholder: "e.g., Alexander Hayes",
+        title: "Job Title",
+        titlePlaceholder: "e.g., VP of Brand Development / Head of Culinary",
+        company: "Company / Restaurant Brand",
         companyPlaceholder: "e.g., Americana Group / Four Seasons Hospitality",
-        branches: "Current Operational Branches",
-        branchOptions: ["1 - 3 Boutique Locations", "4 - 10 Multi-Unit Branches", "10+ Enterprise Regional Fleet"],
-        lines: "Product Lines of Interest",
-        lineOptions: [
-          { id: "replicas", label: "Line 01: Hyper-Realistic Food Replicas (1:1)" },
-          { id: "monumental", label: "Line 02: Monumental Outdoor Fiberglass Sculptures (Outscale)" },
-          { id: "smart", label: "Line 03: Smart Interactive Touch Dining Tables" },
-          { id: "full", label: "Full Turnkey Architectural Suite" },
-        ],
-        city: "Target Deployment Location",
-        cityOptions: ["Cairo & Giza", "New Administrative Capital", "Riyadh, Saudi Arabia", "Dubai & Abu Dhabi, UAE", "Alexandria & North Coast", "Other Middle East Destination"],
-        phone: "Direct Phone / Executive WhatsApp",
+        phone: "Mobile / WhatsApp Number",
         phonePlaceholder: "+20 100 123 4567 or +966 50 123 4567",
-        notes: "Project Scope & Target Launch Date",
-        notesPlaceholder: "Describe your menu items, scale requirements, or branch roll-out timeline...",
       },
-      submitButton: "Schedule Enterprise Consultation & Deck",
+      submitButton: "Request Quotation",
       submitting: "Submitting Briefing...",
       successTitle: "VIP Briefing Received Successfully",
       successMessage: "Thank you. Your project brief has been allocated to our Chief Architectural Officer. A confirmation package has been logged under priority tracking.",
@@ -864,7 +923,7 @@ export const content: Record<Language, Translations> = {
       desc: "Download our confidential portfolio deck featuring material engineering specs, photogrammetry case studies, and enterprise ROI models for hospitality leaders.",
       downloadBtn: "Download PDF Lookbook (Instant Access)",
       features: [
-        "Complete technical breakdown of Line 01, Line 02 (Outscale), and Line 03",
+        "Complete technical breakdown of Line 01, Line 02 (Monumental Sculptures), and Line 03",
         "Comparative cost analysis vs daily display food waste",
         "Wind-load & UV weatherproofing engineering certificates",
         "Interactive dining table software & hardware integration guide",
@@ -874,11 +933,11 @@ export const content: Record<Language, Translations> = {
     footer: {
       tagline: "Engineering Irresistible Desire through museum-grade food models and interactive dining innovation.",
       parentCompany: "The Food Models — A Specialized Subsidiary of City Scale Models Engineering S.A.E.",
-      locations: ["Cairo", "New Administrative Capital", "Dubai", "Riyadh"],
+      locations: ["Egypt (Cairo)", "Saudi Arabia (Riyadh)"],
       quickLinksTitle: "Strategic Navigation",
       contactTitle: "Executive Contacts",
       copyright: "© 2026 The Food Models. All Rights Reserved.",
-      rights: "Engineered with architectural precision by City Scale Models & Outscale Models.",
+      rights: "Engineered with architectural precision by City Scale Models.",
     },
   },
   ar: {
@@ -904,7 +963,7 @@ export const content: Record<Language, Translations> = {
         line3Desc: "شاشات لمس تفاعلية، قوائم ثلاثية الأبعاد وألعاب عائلية",
       },
       cta: "احجز استشارة خاصة لمشروعك",
-      proposalButton: "الملف التعريفي للشركات",
+      proposalButton: "طلب عرض سعر",
     },
     hero: {
       badge: "إحدى شركات \"سيتي للمجسمات\" ✦ حيث تلتقي الهندسة المعمارية الدقيقة بفنون الضيافة الراقية",
@@ -913,21 +972,21 @@ export const content: Record<Language, Translations> = {
       primaryCta: "اطلب تنفيذ تحفتك الخاصة",
       secondaryCta: "اكتشف خطوط الإنتاج الثلاثة ↓",
       trustPoints: {
-        years: { val: "+15 عاماً", label: "من الريادة في التصنيع الهندسي والمجسمات المعمارية" },
+        years: { val: "+28 عاماً", label: "من الريادة في التصنيع الهندسي والمجسمات المعمارية" },
         fidelity: { val: "100%", label: "تطابق بصري تام لا يمكن تمييزه بالعين عن الأطباق الحقيقية" },
         engineering: { val: "شريك كبرى العلامات", label: "وسلاسل الضيافة والمطاعم الراقية في المنطقة" },
       },
-      stampText: "تطابق بصري 100% • ضمان سيتي للمجسمات • جودة معمارية فائقة • ",
+      stampText: "تطابق بصري 100% • خبرة +28 عاماً سيتي للمجسمات • جودة معمارية فائقة • ",
     },
     heritage: {
       tag: "الامتياز الهندسي لسيتي للمجسمات",
-      headline: "مدعومون بأكبر صرح هندسي لصناعة المجسمات في مصر والشرق الأوسط",
+      headline: "مدعومون بأكبر صرح هندسي لصناعة المجسمات في مصر والشرق الأوسط (تأسست عام 1998)",
       quote: "«الواقعية المتقنة لا تأتي صدفة.. بل هي نتاج هندسة بالغة الدقة.»",
-      p1: "على مدار أكثر من عقد ونصف، تصدّرت سيتي للمجسمات (City Scale Models) المشهد الإقليمي في تجسيد أضخم المخططات العمرانية والمشاريع القومية والأبراج السكنية بأعلى معايير الدقة الميكرونية العالمية.",
-      p2: "ومن هذا الصرح العريق ولدت The Food Models. لقد قمنا بنقل ماكينات القطع الليزري المتطورة، وغرف دهانات السيارات الحرارية، وتقنيات المسح ثلاثي الأبعاد، وخبرات كبار النحاتين والمهندسين لخدمة قطاع الأغذية والمشروبات الراقي.",
+      p1: "على مدار أكثر من 28 عاماً (تأسست عام 1998)، تصدّرت سيتي للمجسمات (City Scale Models) المشهد الإقليمي في تجسيد أضخم المخططات العمرانية والمشاريع القومية والأبراج السكنية بأعلى معايير الدقة الميكرونية العالمية.",
+      p2: "ومن هذا الصرح العريق ولدت The Food Models. لقد قمنا بنقل ماكينات القطع الليزري المتطورة، وأفران الطلاء الحرارية الصناعية، وتقنيات المسح ثلاثي الأبعاد، وخبرات كبار النحاتين والمهندسين لخدمة قطاع الأغذية والمشروبات الراقي.",
       p3: "عندما تتعاون معنا، فأنت لا تشتري مجرد \"ديكورات\".. بل تتعاقد مع مؤسسة هندسية متكاملة تترجم هوية علامتك التجارية وقائمة أطباقك المميزة إلى أعمال فنية استثمارية مستدامة تدوم لسنوات.",
       stats: {
-        years: { number: "+15", label: "عاماً من الإرث الهندسي", desc: "ريادة المجسمات المعمارية في مصر والخليج" },
+        years: { number: "+28", label: "عاماً من الإرث الهندسي", desc: "ريادة المجسمات المعمارية في مصر والمملكة العربية السعودية" },
         fidelity: { number: "100%", label: "دقة بصرية ميكرونية", desc: "محاكاة واقعية للمعان الصلصات وطراوة المخبوزات" },
         scale: { number: "∞", label: "مرونة هندسية بلا حدود", desc: "من المجسمات الفردية 1:1 حتى المعالم العملاقة بارتفاع 10+ أمتار" },
         freshness: { number: "365", label: "يوماً من النضارة الدائمة", desc: "صفر هدر طعام مع جاذبية بصرية مستمرة طوال العام" },
@@ -967,7 +1026,7 @@ export const content: Record<Language, Translations> = {
         badge: "خط الإنتاج 02: الضخامة والمعالم",
         title: "مجسمات الفايبر جلاس الخارجية الضخمة (Monumental Sculptures)",
         tagline: "اجعل فرعك علامة جغرافية بارزة يتحدث عنها الجميع.",
-        overview: "الحجم والضخامة لهما تأثير سيكولوجي طاغٍ لا تضاهيه أي لافتة إعلانية تقليدية. مدعومون بإمكانيات Outscale Models (outscale-models.com) وتحالف سيتي للمجسمات، نصنع وننفذ مجسمات فايبر جلاس عملاقة بأي قياس تطلبه مع هياكل حديد مجلفن ودهانات حرارية معتمدة.",
+        overview: "الحجم والضخامة لهما تأثير سيكولوجي طاغٍ لا تضاهيه أي لافتة إعلانية تقليدية. مدعومون بإمكانيات وخبرة سيتي للمجسمات (city-scale.com)، نصنع وننفذ مجسمات فايبر جلاس عملاقة بأي قياس تطلبه مع هياكل حديد مجلفن وأفران طلاء حرارية صناعية معتمدة.",
         features: [
           {
             title: "مرونة هندسية بلا حدود للأحجام",
@@ -975,7 +1034,7 @@ export const content: Record<Language, Translations> = {
           },
           {
             title: "مقاومة فائقة للمناخ الصحراوي والساحلي",
-            desc: "معالجة بمواد عزل وبويات سيارات حرارية ومواد مانعة للأشعة فوق البنفسجية (UV) لتتحمل حرارة الصيف الشديدة، والعواصف الرملية، ورطوبة السواحل.",
+            desc: "معالجة بمواد عزل وأفران طلاء حرارية صناعية ومواد مانعة للأشعة فوق البنفسجية (UV) لتتحمل حرارة الصيف الشديدة، والعواصف الرملية، ورطوبة السواحل.",
           },
           {
             title: "أمان هيكلي معتمد وهياكل فولاذية",
@@ -986,7 +1045,7 @@ export const content: Record<Language, Translations> = {
             desc: "يتحول المجسم فوراً إلى نقطة التقاط صور وسيلفي تتصدر تيك توك وإنستغرام، مما يمنحك ملايين المشاهدات المجانية دورياً.",
           },
         ],
-        idealFor: "ممرات طلبات السيارات (Drive-Thru)، واجهات المراكز التجارية الكبرى، مدن الملاهي والترفيه، والفروع الرئيسية لسلاسل الأغذية الشهيرة في مصر والخليج.",
+        idealFor: "ممرات طلبات السيارات (Drive-Thru)، واجهات المراكز التجارية الكبرى، مدن الملاهي والترفيه، والفروع الرئيسية لسلاسل الأغذية الشهيرة في مصر والمملكة العربية السعودية.",
         sliderTitle: "محاكي المقاييس التفاعلي",
         sliderHint: "اسحب المؤشر لاختبار ارتفاع المجسم من متر واحد وحتى أكثر من 10 أمتار مقارنة بحجم الإنسان.",
         currentScale: "ارتفاع المنحوتة المعمارية",
@@ -1045,15 +1104,15 @@ export const content: Record<Language, Translations> = {
       },
     },
     outscaleOutdoor: {
-      tag: "ملف خط الإنتاج 02 التخصصي • تحالف OUTSCALE MODELS",
+      tag: "ملف خط الإنتاج 02 التخصصي • المنحوتات والمجسمات العملاقة",
       headline: "مجسمات الفايبر جلاس الخارجية العملاقة والمعالم المعمارية",
       subtitle: "صناعة معالم بصرية عملاقة تقاوم أقسى الظروف المناخية وتتصدر منصات التواصل الاجتماعي.",
-      heritageBadge: "تحالف هندسي رسمي مع Outscale Models (outscale-models.com)",
-      introParagraph: "الحجم والضخامة لهما تأثير سيكولوجي طاغٍ لا تضاهيه أي لافتة إعلانية تقليدية. بدعم من شركة Outscale Models المتخصصة في المجسمات الخارجية الضخمة والمنحوتات الميدانية الكبرى في مصر والخليج والصين، تقوم The Food Models بتصميم وتصنيع مجسمات أطعمة خارجية عملاقة مصممة هندسياً لتقاوم حرارة الصيف الشديدة والعواصف الرملية، لتتحول فوراً إلى علامة جغرافية ونقطة التقاط صور وفيديوهات سيلفي لا تتوقف.",
+      heritageBadge: "خبرة واعتماد هندسي رسمي من سيتي للمجسمات (city-scale.com)",
+      introParagraph: "الحجم والضخامة لهما تأثير سيكولوجي طاغٍ لا تضاهيه أي لافتة إعلانية تقليدية. بدعم من مجموعة سيتي للمجسمات الرائدة منذ أكثر من 28 عاماً في المجسمات الخارجية الضخمة والمنحوتات الميدانية الكبرى في مصر والمملكة العربية السعودية، تقوم The Food Models بتصميم وتصنيع مجسمات أطعمة خارجية عملاقة مصممة هندسياً لتقاوم حرارة الصيف الشديدة والعواصف الرملية، لتتحول فوراً إلى علامة جغرافية ونقطة التقاط صور وفيديوهات سيلفي لا تتوقف.",
       doctorBio: {
         title: "القيادة الفنية والاستشارات النحتية العامة",
         name: "د. أحمد موسى",
-        role: "كبير استشاريي النحت الميداني (تحالف Outscale Models و The Food Models)",
+        role: "كبير استشاريي النحت الميداني (فريق الإشراف الفني بسيتي للمجسمات و The Food Models)",
         degrees: [
           "دكتوراه في النحت الميداني (النحت العام وعلاقته بالبيئة المحيطة) - كلية الفنون الجميلة بالزمالك، جامعة حلوان",
           "ماجستير في النحت الميداني (تخصص نحت تشخيصي)",
@@ -1071,7 +1130,7 @@ export const content: Record<Language, Translations> = {
         {
           title: "مجسم حلوى وشوكولاتة دانيت العملاقة (Danette)",
           client: "دانون / دانيت (Danone)",
-          desc: "مجسم خارجي ضخم ومتقن للغاية لكوب وحلوى شوكولاتة دانيت مع تموجات القشطة اللامعة بتقنية دهانات السيارات الحرارية.",
+          desc: "مجسم خارجي ضخم ومتقن للغاية لكوب وحلوى شوكولاتة دانيت مع تموجات القشطة اللامعة بتقنية أفران الطلاء الحرارية الصناعية.",
           image: "/outdoor/danette-chocolate.webp",
           scale: "مقياس ميداني ضخم",
           materials: "بوليمر فايبر جلاس FRP، طلاء بولي يوريثان حراري عازل",
@@ -1082,7 +1141,15 @@ export const content: Record<Language, Translations> = {
           desc: "مجسم معماري ضخم لكيس رقائق الخبز المقرمشة مع تطاير المكونات في الهواء لواجهات الفروع ومحطات التوزيع الرئيسية.",
           image: "/outdoor/sunbites-chips.webp",
           scale: "ارتفاع 3.5 أمتار",
-          materials: "مركبات فايبر جلاس عالية الصلابة، أصباغ سيارات معالجة ضد الشمس",
+          materials: "مركبات فايبر جلاس عالية الصلابة، أصباغ بوليمرية معالجة ضد الشمس",
+        },
+        {
+          title: "مجسم شيبسي بلايز المميز للعرض الخارجي (Chipsy Playz)",
+          client: "بيبسيكو / شيبسي (PepsiCo)",
+          desc: "مجسم إعلاني ميداني ضخم يبرز عبوة شيبسي مع رقائق بطاطس عملاقة معلقة بالهواء بتصميم يجذب آلاف الزوار والتقاط الصور.",
+          image: "/outdoor/chipsy-playz.png",
+          scale: "عرض واجهات ميداني ضخم",
+          materials: "راتنجات بوليمر صلبة، شاسيه فولاذي مقاوم للرياح",
         },
         {
           title: "مجسم كوب وحبوب قهوة نسكافيه الميداني (Nescafé)",
@@ -1094,11 +1161,67 @@ export const content: Record<Language, Translations> = {
         },
         {
           title: "منحوتات الفايبر جلاس الإنشائية FRP Sculptures",
-          client: "مشاريع Outscale الإقليمية والدولية",
-          desc: "بوليمرات مقواة بألياف زجاجية عالية التحمل بالتعاون مع مراكز التصنيع الدولية التابعة لسيتي وأوت سكيل.",
+          client: "مشاريع سيتي الدولية والإقليمية",
+          desc: "بوليمرات مقواة بألياف زجاجية عالية التحمل بالتعاون مع مراكز التصنيع الهندسية التابعة لمجموعة سيتي للمجسمات.",
           image: "/outdoor/frp-sculpture.webp",
           scale: "قدرة على تنفيذ ارتفاعات متعددة الطوابق",
           materials: "راتنجات مقاومة للحرارة والرياح حتى 140 كم/س",
+        },
+        {
+          title: "مجسمات معمارية خارجية بتقنية الفاكيوم (Vacuum-Formed)",
+          client: "سيتي للمجسمات الهندسية",
+          desc: "ألواح ومجسمات مشكلة حرارياً بالضغط والتفريغ الهوائي لواجهات الفروع التجارية فائقة الدقة والانسيابية.",
+          image: "/outdoor/vacuum-formed.webp",
+          scale: "واجهات مخصصة حسب الطلب",
+          materials: "بوليمرات حرارية عالية المتانة، طبقات حماية شفافة",
+        },
+        {
+          title: "مجسم التنين الأسطوري العملاق للمدن الترفيهية",
+          client: "وجهات ترفيهية ومراكز تسوق كبرى",
+          desc: "منحوتة تنين أسطوري عملاق بملمس حراشف واقعي مذهل وهيكل إنشائي داخلي معتمد لتحمل الأوزان والرياح.",
+          image: "/outdoor/dragon-sculpture.webp",
+          scale: "امتداد نحتي يتجاوز 6 أمتار",
+          materials: "هيكل جملونات حديد مجلفن، فايبر جلاس مشكل يدوياً",
+        },
+        {
+          title: "معلم عرض خارجي عملاق لعالم آدم الترفيهي (Adam’s World)",
+          client: "مدينة عالم آدم الترفيهية العائلية",
+          desc: "مجموعة منحوتات مجسمة خارجية ضخمة لشخصيات كرتونية ومطاعم عائلية مصممة للبقاء الدائم تحت أشعة الشمس المباشرة.",
+          image: "/outdoor/adams-world.webp",
+          scale: "مجموعة ميدانية متعددة العناصر",
+          materials: "بولي يوريثان مقاوم للأشعة فوق البنفسجية، قوالب مقواة",
+        },
+        {
+          title: "تمثال أطلس الميداني العملاق بطلاء البرونز المعماري",
+          client: "قطاع الفنون العامة والميادين بسيتي للمجسمات",
+          desc: "تمثال تاريخي عملاق بمظهر البرونز الكلاسيكي المنحوت، مصنع بخامات بوليمرية خفيفة الوزن وشديدة الصلابة للميادين.",
+          image: "/outdoor/atlas-statue.webp",
+          scale: "ارتفاع بطولي 5 أمتار",
+          materials: "بوليمر بصبغات البرونز البارد، لوحات تثبيت مجلفنة",
+        },
+        {
+          title: "تمثال ونصب الفنان محمد صبحي الميداني التذكاري",
+          client: "لجنة الفنون الميدانية والثقافية",
+          desc: "تمثال تشخيصي واقعي عالي الدقة لشخصية عامة يجسد أدق تعبيرات الوجه والملابس المعمارية للمراكز الثقافية والمسارح.",
+          image: "/outdoor/monument-sobhi.webp",
+          scale: "مقياس بطولي 1.5 مرة من الحجم الطبيعي",
+          materials: "مركبات راتنج نحتي، عوازل حرارية ومناخية كاملة",
+        },
+        {
+          title: "منحوتة الحرية الميدانية (إشراف د. أحمد موسى)",
+          client: "إدارة تجميل الميادين العامة والمحاور الرئيسية",
+          desc: "عمل نحتي ميداني تجريدي حديث يعبر عن الانطلاق والريادة، مصمم لميادين العواصم والتقاطعات الكبرى.",
+          image: "/outdoor/liberty-monument.webp",
+          scale: "ارتفاع معماري بارز للميادين",
+          materials: "مركبات عالية الشد، تشطيب نهائي بإشراف استشاري النحت",
+        },
+        {
+          title: "منحوتات ميدانية ومعالم معمارية متنوعة",
+          client: "تحالف الفنون المعمارية والتصميم الإنشائي",
+          desc: "سلسلة أعمال نحتية وبيئية متكاملة مع النوافير والحدائق المفتوحة للشركات الكبرى والفنادق الفاخرة.",
+          image: "/outdoor/ahmad-mousa-sculpture.webp",
+          scale: "أبعاد هندسية مخصصة حسب المشروع",
+          materials: "راتنجات معمارية متعددة الخامات، شاسيهات ستانلس ستيل",
         },
       ],
       engineeringSpecs: [
@@ -1108,9 +1231,9 @@ export const content: Record<Language, Translations> = {
           items: ["مقاومة أحمال الرياح العاتية حتى 140 كم/ساعة", "تثبيت كيميائي للأرضيات بمسامير زلزالية معتمدة", "شناكل رفع مدمجة لتسهيل التركيب بالأوناش الهندسية"],
         },
         {
-          title: "غرف دهانات السيارات والأفران الحرارية",
-          desc: "تشطيب نهائي داخل كبائن رش أفران السيارات بدهانات بولي يوريثان متعددة الطبقات تمنع التمدد الحراري والبهتان الشمسي.",
-          items: ["مركبات UV400 تمنع اصفرار الألوان أو تغير درجاتها في صيف الخليج", "عزل سيراميكي طارد للغبار والرمال والأمطار", "طبقة حماية ضد الخدوش ولمس الجمهور المباشر"],
+          title: "أفران الطلاء الحرارية الصناعية",
+          desc: "تشطيب نهائي داخل كبائن رش أفران الطلاء الحرارية الصناعية بدهانات بولي يوريثان متعددة الطبقات تمنع التمدد الحراري والبهتان الشمسي.",
+          items: ["مركبات UV400 تمنع اصفرار الألوان أو تغير درجاتها في صيف مصر والخليج", "عزل سيراميكي طارد للغبار والرمال والأمطار", "طبقة حماية ضد الخدوش ولمس الجمهور المباشر"],
         },
         {
           title: "الإضاءة المعمارية والمؤثرات المدمجة",
@@ -1120,8 +1243,8 @@ export const content: Record<Language, Translations> = {
       ],
       ctaBox: {
         title: "اطلب تصنيع مجسم خارجي عملاق لعلامتك التجارية",
-        desc: "اجعل فرعك الرئيسي أو مسار طلبات السيارات (Drive-Thru) المعلم الأكثر تصويراً وتداولاً في مدينتك.",
-        btn: "تواصل مع مهندسي المنحوتات الإنشائية",
+        desc: "اجعل فرعك الرئيسي أو مسار طلبات السيارات (Drive-Thru) المعلم الأكثر تصويراً وتداولاً في مصر والمملكة العربية السعودية.",
+        btn: "طلب عرض سعر للمنحوتات العملاقة",
       },
     },
     smartTablesPage: {
@@ -1226,7 +1349,7 @@ export const content: Record<Language, Translations> = {
           {
             metric: "المرجعية الهندسية والتاريخ",
             generic: "ورش فردية تفتقر للدقة الهندسية والاعتمادات الرسمية.",
-            theFoodModels: "إحدى شركات سيتي للمجسمات (خبرة 15+ عاماً في المشاريع القومية والعمرانية الكبرى).",
+            theFoodModels: "إحدى شركات سيتي للمجسمات (خبرة +28 عاماً في المشاريع القومية والعمرانية الكبرى).",
             advantage: "دقة معمارية صناعية",
           },
           {
@@ -1238,7 +1361,7 @@ export const content: Record<Language, Translations> = {
           {
             metric: "المتانة ومقاومة العوامل الجوية",
             generic: "خامات رديئة تتشقق وتتغير ألوانها سريعاً بفعل الحرارة والإضاءة.",
-            theFoodModels: "فايبر جلاس معالج بدهانات سيارات حرارية ومواد عزل UV تضمن البقاء لسنوات دون بهتان.",
+            theFoodModels: "فايبر جلاس معالج بأفران طلاء حرارية صناعية ومواد عزل UV تضمن البقاء لسنوات دون بهتان.",
             advantage: "نضارة دائمة 365 يوماً",
           },
           {
@@ -1259,31 +1382,43 @@ export const content: Record<Language, Translations> = {
     process: {
       tag: "رحلة الشراكة والإنتاج",
       title: "من الفكرة المطبخية إلى التحفة المعمارية المستدامة",
-      subtitle: "أربع مراحل احترافية تضمن تسليم العمل بأعلى درجات الدقة والجاهزية في مصر والخليج العربي.",
+      subtitle: "ست مراحل احترافية متكاملة تضمن إنجاز المشروع بأعلى درجات الدقة والجاهزية في مصر والمملكة العربية السعودية.",
       steps: [
         {
           num: "01",
-          title: "الاستشارة وتحليل الهوية (Culinary Audit)",
-          desc: "نجتمع مع مسؤولي التسويق والشيف التنفيذي لدراسة تفاصيل الأطباق، وزوايا الإضاءة، ومواقع التثبيت، والهدف التجاري والتسويقي للمشروع.",
-          deliverable: "تقرير الخامات والمواصفات المعمارية",
+          title: "تحليل للفروع والمنيو كامل",
+          desc: "دراسة شاملة لقائمة الطعام بكافة الفروع، وتحليل زوايا الرؤية وشدة الإضاءة وحركة الزوار لاختيار الأطباق الأكثر ربحية وجاذبية.",
+          deliverable: "تقرير التدقيق البصري واختيار الأصناف المستهدفة",
         },
         {
           num: "02",
-          title: "المسح ثلاثي الأبعاد والتخطيط (3D Scanning & CAD)",
-          desc: "نستخدم تقنيات المسح الضوئي (Photogrammetry) داخل معامل سيتي للمجسمات لرفع أبعاد الأطباق الحقيقية بدقة ميكرونية وإعداد المخططات الهندسية.",
-          deliverable: "مخططات رقمية ثلاثية الأبعاد ونماذج CAD دقيقة",
+          title: "خطة كاملة للمنتجات والفروع",
+          desc: "إعداد خطة توزيع متكاملة، ومخططات CAD الهندسية، وجدول زمني دقيق لإنتاج وتوزيع المجسمات عبر شبكة الفروع لضمان التناسق البصري للهوية.",
+          deliverable: "المخطط التنفيذي الشامل وجدول التوريد للفروع",
         },
         {
           num: "03",
-          title: "التشكيل والتصنيع الفني (Master Fabrication)",
-          desc: "تشكيل قوالب السيليكون المخصصة، وصب البوليمرات المقاومة، والتلوين اليدوي متعدد الطبقات، وتجهيز الهياكل الفولاذية داخل ورشنا المركزية.",
-          deliverable: "تحفة فنية تخضع لفحص الجودة الدقيق",
+          title: "عينات من المنتجات",
+          desc: "تصنيع نماذج عينات أولية دقيقة، واختبار الألوان، ومحاكاة ملمس الطهي واللمعان لاعتمادها المباشر من إدارة العلامة والشيف التنفيذي.",
+          deliverable: "عينة نموذج معتمدة وتوقيع المواصفات الفنية القياسية",
         },
         {
           num: "04",
-          title: "التوريد والتركيب الشامل (Turnkey Deployment)",
-          desc: "شحن آمن وتثبيت هندسي دقيق مع اختبارات السلامة وتشغيل البرمجيات في أي موقع داخل مصر ودول مجلس التعاون الخليجي.",
-          deliverable: "معلم دائم جاهز للتشغيل مع ضمان معتمد",
+          title: "بدأ التصنيع",
+          desc: "بدء خطوط الإنتاج داخل مصانع سيتي للمجسمات باستخدام خامات البوليمر المعمارية، وأفران الطلاء الحرارية الصناعية، والتشطيب اليدوي الدقيق.",
+          deliverable: "شهادات ضبط الجودة الهيكلية والتحمل",
+        },
+        {
+          num: "05",
+          title: "التوريد والتركيب",
+          desc: "شحن وتوريد المجسمات في صناديق هندسية مصفحة مع فرق تركيب متخصصة للتثبيت الاحترافي في فروع مصر والمملكة العربية السعودية.",
+          deliverable: "محضر الفحص والتسليم النهائي المعتمد بالفروع",
+        },
+        {
+          num: "06",
+          title: "الصيانة والمتابعة",
+          desc: "برامج دورية مجدولة للتنظيف الاحترافي، وإعادة التلميع التخصصي، ومعاينة التثبيت لضمان استدامة النضارة والبريق لسنوات طويلة.",
+          deliverable: "وثيقة الضمان الشامل وجداول الصيانة الدورية",
         },
       ],
     },
@@ -1352,11 +1487,11 @@ export const content: Record<Language, Translations> = {
           id: "danette-chocolate-outdoor",
           title: "مجسم حلوى وشوكولاتة دانيت العملاقة الميداني",
           category: "sculptures",
-          desc: "معلم فايبر جلاس خارجي ضخم مصنع بالتعاون مع أوت سكيل للمجسمات ومقاوم لحرارة الشمس.",
+          desc: "معلم فايبر جلاس خارجي ضخم مصنع بتقنيات سيتي للمجسمات ومقاوم لحرارة الشمس.",
           image: "/outdoor/danette-chocolate.webp",
           tags: ["مقياس عملاق", "بوليمر FRP", "معالجة حرارية"],
           scale: "مقياس ميداني ضخم",
-          finish: "بولي يوريثان حراري عازل للأشعة UV",
+          finish: "بولي يوريثان حراري صناعي عازل للأشعة UV",
         },
         {
           id: "sunbites-outdoor-facade",
@@ -1366,7 +1501,7 @@ export const content: Record<Language, Translations> = {
           image: "/outdoor/sunbites-chips.webp",
           tags: ["منارة بصرية", "هيكل حديدي", "معتمد ضد الرياح"],
           scale: "ارتفاع 3.5 م",
-          finish: "دهانات سيارات مقاومة للعوامل الجوية",
+          finish: "دهانات صناعية حرارية مقاومة للعوامل الجوية",
         },
         {
           id: "nescafe-giant-mug",
@@ -1374,7 +1509,7 @@ export const content: Record<Language, Translations> = {
           category: "sculptures",
           desc: "مجسم أحمر ضخم بعدة أمتار مع محاكاة رغوة القهوة وحبات البن لواجهات المطاعم والفروع.",
           image: "/outdoor/nescafe-coffee.webp",
-          tags: ["معلم سياحي", "محطات درايف ثرو", "تحالف أوت سكيل"],
+          tags: ["معلم سياحي", "محطات درايف ثرو", "سيتي للمجسمات"],
           scale: "أكثر من 4 أمتار",
           finish: "حديد مجلفن وراتنجات بحرية",
         },
@@ -1435,30 +1570,19 @@ export const content: Record<Language, Translations> = {
       title: "هل أنت مستعد لتجعل علامتك التجارية الأيقونة البصرية الأولى في مجالك؟",
       intro: "نظراً للدقة الهندسية العالية والاهتمام الاستثنائي بالتفاصيل في كل عمل نصنعه، فإننا نقبل عدداً محدوداً ومختاراً من المشاريع الكبرى في كل ربع سنوي لضمان أعلى مستويات الإبهار.",
       ndaBadge: "اتفاقية سرية معلومات رسمية (NDA) متوفرة وموقعة فور استلام ملخص المشروع.",
-      formTitle: "نموذج التواصل لكبار العملاء وحجز الاستشارة",
+      formTitle: "طلب عرض سعر واجتماع استشاري",
       formSubtitle: "املأ البيانات أدناه وسيتواصل معك المدير الهندسي التنفيذي لمناقشة مشروعك خلال 24 ساعة.",
       fields: {
-        name: "الاسم الكريم والمنصب الوظيفي",
-        namePlaceholder: "مثال: م. طارق منصور — مدير تطوير العلامة التجارية",
-        company: "اسم العلامة التجارية / المجموعة",
-        companyPlaceholder: "مثال: مجموعة أمريكانا / فنادق الفورسيزونز",
-        branches: "عدد الفروع الحالية للعلامة",
-        branchOptions: ["1 - 3 فروع مميزة (بوتيك)", "4 - 10 فروع قيد التوسع", "أكثر من 10 فروع (سلسلة إقليمية كبرى)"],
-        lines: "خط الإنتاج المطلوب لمشروعك",
-        lineOptions: [
-          { id: "replicas", label: "خط 01: مجسمات أطعمة فائقة الواقعية (1:1)" },
-          { id: "monumental", label: "خط 02: منحوتات فايبر جلاس خارجية عملاقة (أوت سكيل)" },
-          { id: "smart", label: "خط 03: طاولات طعام تفاعلية ذكية" },
-          { id: "full", label: "باقة هندسية ومعمارية متكاملة لجميع الخطوط" },
-        ],
-        city: "الموقع الجغرافي المستهدف للتركيب",
-        cityOptions: ["القاهرة والجيزة", "العاصمة الإدارية الجديدة", "الرياض، المملكة العربية السعودية", "دبي وأبوظبي، الإمارات", "الإسكندرية والساحل الشمالي", "وجهة أخرى في الشرق الأوسط"],
-        phone: "رقم الهاتف المباشر / واتساب الإدارة",
-        phonePlaceholder: "+20 100 123 4567 أو +966 50 123 4567",
-        notes: "تفاصيل المشروع وموعد الافتتاح المستهدف",
-        notesPlaceholder: "اذكر الأصناف المراد تجسيدها، أو الأحجام المطلوبة، أو الجدول الزمني للتوسع...",
+        name: "الاسم",
+        namePlaceholder: "مثال: م. طارق منصور",
+        title: "المسمى الوظيفي",
+        titlePlaceholder: "مثال: مدير التطوير / الشيف التنفيذي / رئيس قطاع التسويق",
+        company: "الشركة / العلامة التجارية",
+        companyPlaceholder: "اسم مطعمك أو مجموعتك الفندقية",
+        phone: "الموبايل / واتساب",
+        phonePlaceholder: "+20 100 000 0000 أو +966 50 000 0000",
       },
-      submitButton: "طلب اجتماع استشاري وملف الأعمال الشامل",
+      submitButton: "طلب عرض سعر",
       submitting: "جاري إرسال طلب الاستشارة...",
       successTitle: "تم استلام طلب الاستشارة بنجاح",
       successMessage: "شكراً لاهتمامكم. تم تحويل ملخص مشروعكم إلى الإدارة الهندسية المركزية وسيتم التواصل معكم خلال أقل من 24 ساعة.",
@@ -1472,7 +1596,7 @@ export const content: Record<Language, Translations> = {
       desc: "حمّل نسختك الحصرية من الدليل الفني للشركات الذي يتضمن تفاصيل المواد، ودراسات المسح ثلاثي الأبعاد، ونماذج العائد الاستثماري لكبرى سلاسل الضيافة.",
       downloadBtn: "تحميل الدليل الفني التنفيذي (PDF)",
       features: [
-        "شرح تفصيلي للمواصفات الهندسية للخطوط الثلاثة",
+        "شرح تفصيلي للمواصفات الهندسية للخطوط الثلاثة (بما فيها المنحوتات العملاقة)",
         "دراسة مقارنة التكاليف مقابل الهدر اليومي لأطباق العرض",
         "شهادات اختبار مقاومة الرياح والأشعة فوق البنفسجية في الخليج",
         "دليل الربط البرمجي والهندسي للطاولات الذكية مع أنظمة الكاشير",
@@ -1482,11 +1606,11 @@ export const content: Record<Language, Translations> = {
     footer: {
       tagline: "نهندس رغبة بصرية لا تُقاوم من خلال مجسمات الأطعمة فائقة الواقعية والابتكارات التفاعلية.",
       parentCompany: "The Food Models — إحدى الشركات التابعة لمجموعة سيتي للمجسمات الهندسية ش.م.م.",
-      locations: ["القاهرة", "العاصمة الإدارية الجديدة", "دبي", "الرياض"],
+      locations: ["مصر (القاهرة)", "المملكة العربية السعودية (الرياض)"],
       quickLinksTitle: "روابط سريعة",
       contactTitle: "التواصل التنفيذي المباشر",
       copyright: "جميع الحقوق محفوظة © 2026 The Food Models.",
-      rights: "هندسة وتصنيع سيتي للمجسمات المعمارية وأوت سكيل.",
+      rights: "هندسة وتصنيع سيتي للمجسمات المعمارية.",
     },
   },
 };

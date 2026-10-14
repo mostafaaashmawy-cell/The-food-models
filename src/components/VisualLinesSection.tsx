@@ -292,7 +292,7 @@ export const VisualLinesSection: React.FC = () => {
                   to="/lines/monumental"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold w-fit hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
                 >
-                  <span>{isRTL ? 'استكشف مشاريع Outscale ومواصفات المنحوتات العملاقة ←' : 'Explore Outscale Models Alliance & Landmark Projects →'}</span>
+                  <span>{isRTL ? 'استكشف مشاريع ومواصفات المنحوتات العملاقة لسيتي للمجسمات ←' : 'Explore City Scale Models Landmark Projects →'}</span>
                   <ArrowRight className="w-4 h-4 rtl:rotate-180" />
                 </Link>
               </div>
@@ -350,7 +350,7 @@ export const VisualLinesSection: React.FC = () => {
                         </div>
                       </motion.div>
                       <span className="text-[10px] font-bold text-[#BA2B43] mt-1 whitespace-nowrap">
-                        {isRTL ? 'مجسم سيتي للمجسمات المعماري' : 'City Scale & Outscale Monument'}
+                        {isRTL ? 'مجسم سيتي للمجسمات المعماري' : 'City Scale Monumental Model'}
                       </span>
                     </div>
                   </div>

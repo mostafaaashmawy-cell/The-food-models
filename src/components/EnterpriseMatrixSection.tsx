@@ -111,7 +111,7 @@ export const EnterpriseMatrixSection: React.FC = () => {
             href="#lead-form"
             className="px-6 py-2.5 rounded-full bg-[#4E1420] text-white text-xs font-bold hover:bg-[#350B14] transition-colors whitespace-nowrap shadow-sm"
           >
-            {isRTL ? 'طلب دراسة الجدوى والعائد' : 'Request ROI Consultation'}
+            {isRTL ? 'طلب عرض سعر' : 'Request Quotation'}
           </a>
         </div>
 

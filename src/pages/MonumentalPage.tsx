@@ -162,7 +162,7 @@ export const MonumentalPage: React.FC = () => {
                 </div>
               </motion.div>
               <span className="text-[10px] font-bold text-[#BA2B43] mt-1 whitespace-nowrap">
-                {isRTL ? 'مجسم Outscale & City Scale المعماري' : 'City Scale & Outscale Monument'}
+                {isRTL ? 'مجسم سيتي للمجسمات المعماري' : 'City Scale Monumental Architecture'}
               </span>
             </div>
           </div>

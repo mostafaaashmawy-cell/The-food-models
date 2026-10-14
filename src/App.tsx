@@ -13,7 +13,6 @@ import { MonumentalPage } from './pages/MonumentalPage';
 import { SmartTablesPage } from './pages/SmartTablesPage';
 import { HeritagePage } from './pages/HeritagePage';
 import { PortfolioPage } from './pages/PortfolioPage';
-import { EnterpriseRoiPage } from './pages/EnterpriseRoiPage';
 import { ContactPage } from './pages/ContactPage';
 
 import { MessageSquare } from 'lucide-react';
@@ -37,7 +36,6 @@ export const MainLayout: React.FC = () => {
           <Route path="/lines/smart-tables" element={<SmartTablesPage />} />
           <Route path="/heritage" element={<HeritagePage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/enterprise-roi" element={<EnterpriseRoiPage />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* Fallback */}
           <Route path="*" element={<HomePage />} />

@@ -115,59 +115,44 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal }) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 rtl:left-auto rtl:right-0 mt-2 w-84 bg-white rounded-2xl shadow-2xl border border-[#BA2B43]/20 p-2 z-50 overflow-hidden"
+                      className="absolute top-full left-0 rtl:left-auto rtl:right-0 mt-2 w-76 bg-white rounded-2xl shadow-2xl border border-[#BA2B43]/20 p-2 z-50 overflow-hidden"
                     >
                       <Link
                         to="/lines/replicas"
                         onClick={closeMenus}
-                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#F4EAEB]/60 transition-colors group"
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-[#F4EAEB]/80 transition-colors group"
                       >
-                        <div className="p-2 rounded-lg bg-[#F4EAEB] text-[#BA2B43] group-hover:bg-[#4E1420] group-hover:text-[#D8B26E] transition-colors shrink-0 mt-0.5">
+                        <div className="p-2 rounded-lg bg-[#F4EAEB] text-[#BA2B43] group-hover:bg-[#4E1420] group-hover:text-[#D8B26E] transition-colors shrink-0">
                           <Layers className="w-4 h-4" />
                         </div>
-                        <div>
-                          <div className="text-xs font-bold text-[#1C1917] group-hover:text-[#4E1420]">
-                            {t.nav.lineDropdown.line1}
-                          </div>
-                          <div className="text-[11px] text-[#1C1917]/60 leading-tight mt-0.5">
-                            {t.nav.lineDropdown.line1Desc}
-                          </div>
+                        <div className="text-xs font-bold text-[#1C1917] group-hover:text-[#4E1420]">
+                          {t.nav.lineDropdown.line1}
                         </div>
                       </Link>
 
                       <Link
                         to="/lines/monumental"
                         onClick={closeMenus}
-                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#F4EAEB]/60 transition-colors group"
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-[#F4EAEB]/80 transition-colors group"
                       >
-                        <div className="p-2 rounded-lg bg-[#F4EAEB] text-[#BA2B43] group-hover:bg-[#4E1420] group-hover:text-[#D8B26E] transition-colors shrink-0 mt-0.5">
+                        <div className="p-2 rounded-lg bg-[#F4EAEB] text-[#BA2B43] group-hover:bg-[#4E1420] group-hover:text-[#D8B26E] transition-colors shrink-0">
                           <Maximize2 className="w-4 h-4" />
                         </div>
-                        <div>
-                          <div className="text-xs font-bold text-[#1C1917] group-hover:text-[#4E1420]">
-                            {t.nav.lineDropdown.line2}
-                          </div>
-                          <div className="text-[11px] text-[#1C1917]/60 leading-tight mt-0.5">
-                            {t.nav.lineDropdown.line2Desc}
-                          </div>
+                        <div className="text-xs font-bold text-[#1C1917] group-hover:text-[#4E1420]">
+                          {t.nav.lineDropdown.line2}
                         </div>
                       </Link>
 
                       <Link
                         to="/lines/smart-tables"
                         onClick={closeMenus}
-                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#F4EAEB]/60 transition-colors group"
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-[#F4EAEB]/80 transition-colors group"
                       >
-                        <div className="p-2 rounded-lg bg-[#F4EAEB] text-[#BA2B43] group-hover:bg-[#4E1420] group-hover:text-[#D8B26E] transition-colors shrink-0 mt-0.5">
+                        <div className="p-2 rounded-lg bg-[#F4EAEB] text-[#BA2B43] group-hover:bg-[#4E1420] group-hover:text-[#D8B26E] transition-colors shrink-0">
                           <Tablet className="w-4 h-4" />
                         </div>
-                        <div>
-                          <div className="text-xs font-bold text-[#1C1917] group-hover:text-[#4E1420]">
-                            {t.nav.lineDropdown.line3}
-                          </div>
-                          <div className="text-[11px] text-[#1C1917]/60 leading-tight mt-0.5">
-                            {t.nav.lineDropdown.line3Desc}
-                          </div>
+                        <div className="text-xs font-bold text-[#1C1917] group-hover:text-[#4E1420]">
+                          {t.nav.lineDropdown.line3}
                         </div>
                       </Link>
                     </motion.div>
@@ -195,17 +180,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal }) => {
                 }`}
               >
                 {t.nav.links.portfolio}
-              </Link>
-
-              {/* Enterprise ROI */}
-              <Link
-                to="/enterprise-roi"
-                onClick={closeMenus}
-                className={`px-3.5 py-2 text-xs font-semibold tracking-wide uppercase transition-colors rounded-lg ${
-                  isActive('/enterprise-roi') ? 'text-[#BA2B43] bg-[#F4EAEB]' : 'text-[#1C1917]/80 hover:text-[#BA2B43]'
-                }`}
-              >
-                {t.nav.links.matrix}
               </Link>
 
               {/* Contact */}
@@ -331,14 +305,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal }) => {
                 className="py-2.5 text-sm font-bold text-[#1C1917] hover:text-[#BA2B43] border-b border-[#4E1420]/10 flex items-center justify-between"
               >
                 <span>{t.nav.links.portfolio}</span>
-              </Link>
-
-              <Link
-                to="/enterprise-roi"
-                onClick={closeMenus}
-                className="py-2.5 text-sm font-bold text-[#1C1917] hover:text-[#BA2B43] border-b border-[#4E1420]/10 flex items-center justify-between"
-              >
-                <span>{t.nav.links.matrix}</span>
               </Link>
 
               <Link

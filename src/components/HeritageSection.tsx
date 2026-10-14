@@ -58,7 +58,7 @@ export const HeritageSection: React.FC = () => {
     },
     {
       icon: <Flame className="w-5 h-5 text-[#BA2B43]" />,
-      title: isRTL ? 'أفران طلاء السيارات الحرارية' : 'Automotive Curing Ovens',
+      title: isRTL ? 'أفران الطلاء الحرارية الصناعية' : 'Industrial Thermal Curing Ovens',
       desc: isRTL ? 'طبقات بولي يوريثان مقاومة للحرارة والزيوت والشمس المباشرة.' : 'Polyurethane coats cured to resist extreme desert UV & oils.',
     },
     {
@@ -170,7 +170,7 @@ export const HeritageSection: React.FC = () => {
               City Scale Models Engineering S.A.E.
             </p>
             <p className="text-[11px] text-[#D8B26E]/80 mt-1">
-              {isRTL ? 'المقر الهندسي: القاهرة • الرياض • دبي' : 'Engineering Centers: Cairo • Riyadh • Dubai'}
+              {isRTL ? 'المراكز الهندسية: مصر • المملكة العربية السعودية' : 'Engineering Centers: Egypt • Saudi Arabia'}
             </p>
           </motion.div>
 
@@ -179,7 +179,7 @@ export const HeritageSection: React.FC = () => {
         {/* 4 Live Metric Counters */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 pt-8 border-t border-[#D8B26E]/20">
           
-          {/* Stat 1: 15+ */}
+          {/* Stat 1: 28+ */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -187,7 +187,7 @@ export const HeritageSection: React.FC = () => {
             className="p-6 rounded-2xl bg-[#4E1420]/40 border border-[#D8B26E]/25 text-center flex flex-col items-center justify-center hover:border-[#D8B26E]/60 transition-colors"
           >
             <div className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#D8B26E] mb-2 tracking-tight">
-              <AnimatedNumber end={15} suffix="+" />
+              <AnimatedNumber end={28} suffix="+" />
             </div>
             <div className="text-sm font-bold text-[#FAF8F5] mb-1">
               {t.heritage.stats.years.label}
