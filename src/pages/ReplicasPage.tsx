@@ -13,9 +13,11 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useQuoteModal } from '../context/QuoteModalContext';
 
 export const ReplicasPage: React.FC = () => {
   const { t, isRTL } = useLanguage();
+  const { openQuoteModal } = useQuoteModal();
   const line = t.lines.line1;
 
   // Before / After Slider State
@@ -104,31 +106,48 @@ export const ReplicasPage: React.FC = () => {
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
             onClick={(e) => handleSliderMove(e.clientX)}
-            className="relative w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden cursor-ew-resize select-none border border-[#4E1420]/15"
+            className="relative w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden cursor-ew-resize select-none border border-[#4E1420]/15 bg-black"
           >
             {/* Real Dish Base Layer */}
             <img
               src="/food/burger.jpg"
               alt="Real Culinary Dish"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover filter brightness-[0.97]"
             />
-            <div className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-lg bg-black/75 backdrop-blur-md text-white text-xs font-bold tracking-wide">
-              {line.sliderRealLabel}
+            <div className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-lg bg-black/75 backdrop-blur-md text-white text-xs font-bold tracking-wide border border-white/20 shadow-lg">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                <span>{line.sliderRealLabel}</span>
+              </div>
+              <span className="text-[10px] text-amber-300 block font-mono mt-0.5">
+                {isRTL ? 'معرض للتلف والجفاف خلال 4 ساعات' : 'Perishable — Spoils in 4 Hours'}
+              </span>
             </div>
 
-            {/* Replica Clipped Layer */}
+            {/* Replica Clipped Layer (Geometric Match) */}
             <div
-              className="absolute inset-0 overflow-hidden"
-              style={{ width: `${sliderPosition}%` }}
+              className="absolute inset-0 overflow-hidden pointer-events-none"
+              style={{
+                clipPath: isRTL
+                  ? `polygon(${100 - sliderPosition}% 0, 100% 0, 100% 100%, ${100 - sliderPosition}% 100%)`
+                  : `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`,
+              }}
             >
               <img
-                src="/food/burger 2.jfif"
+                src="/food/burger.jpg"
                 alt="Artisan Replica"
                 className="absolute inset-0 w-full h-full object-cover"
-                style={{ width: sliderContainerRef.current ? `${sliderContainerRef.current.clientWidth}px` : '100%' }}
               />
-              <div className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-lg bg-[#4E1420]/95 backdrop-blur-md text-[#D8B26E] text-xs font-bold tracking-wide border border-[#D8B26E]/40">
-                {line.sliderReplicaLabel}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#4E1420]/40 via-transparent to-transparent" />
+              
+              <div className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-lg bg-[#4E1420]/95 backdrop-blur-md text-[#D8B26E] text-xs font-bold tracking-wide border border-[#D8B26E]/40 shadow-lg">
+                <div className="flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#D8B26E]" />
+                  <span>{line.sliderReplicaLabel}</span>
+                </div>
+                <span className="text-[10px] text-emerald-300 block font-mono mt-0.5">
+                  {isRTL ? 'عمر افتراضي دائم: +10 سنوات' : 'Permanent Vitrine Life: 10+ Years'}
+                </span>
               </div>
             </div>
 
@@ -137,7 +156,7 @@ export const ReplicasPage: React.FC = () => {
               className="absolute top-0 bottom-0 w-1 bg-white shadow-2xl z-20 flex items-center justify-center -translate-x-1/2"
               style={{ left: `${sliderPosition}%` }}
             >
-              <div className="w-10 h-10 rounded-full bg-[#4E1420] border-2 border-white shadow-xl flex items-center justify-center text-white">
+              <div className="w-10 h-10 rounded-full bg-[#4E1420] border-2 border-white shadow-xl flex items-center justify-center text-[#D8B26E]">
                 <Sliders className="w-4 h-4" />
               </div>
             </div>
@@ -218,13 +237,13 @@ export const ReplicasPage: React.FC = () => {
             {line.idealFor}
           </p>
 
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4E1420] text-white text-xs font-bold tracking-wide hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
+          <button
+            onClick={openQuoteModal}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4E1420] text-white text-xs font-bold tracking-wide hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105 cursor-pointer border border-[#D8B26E]/40"
           >
+            <Sparkles className="w-4 h-4 text-[#D8B26E]" />
             <span>{isRTL ? 'اطلب تسعير مجسمات قائمة مطعمك الآن' : 'Commission 1:1 Replicas for Your Menu'}</span>
-            <ArrowRight className="w-4 h-4 rtl:rotate-180" />
-          </Link>
+          </button>
         </div>
       </div>
 

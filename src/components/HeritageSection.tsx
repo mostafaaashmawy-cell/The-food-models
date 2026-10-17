@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, useInView } from 'framer-motion';
-import { ShieldCheck, Cpu, Flame, Layers, Sparkles } from 'lucide-react';
+import { ShieldCheck, Cpu, Flame, Layers, Sparkles, ExternalLink } from 'lucide-react';
 
 interface CounterProps {
   end: number;
@@ -146,32 +146,56 @@ export const HeritageSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Heritage Stamp Seal Card */}
+          {/* Heritage Stamp Seal & Official City Scale Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-4 flex flex-col items-center justify-center p-8 rounded-2xl bg-gradient-to-b from-[#4E1420]/80 to-[#2A0810]/90 border border-[#D8B26E]/30 shadow-2xl relative text-center"
+            className="lg:col-span-4 flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#4E1420]/90 to-[#2A0810]/95 border border-[#D8B26E]/40 shadow-2xl relative text-center"
           >
-            <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full p-2 bg-white/95 shadow-glow-gold border-2 border-[#D8B26E] flex items-center justify-center mb-6">
+            {/* The Food Models & City Scale Identity Lockup */}
+            <div className="relative mb-6">
+              {/* Circular Authenticity Stamp 02 */}
+              <div className="w-32 h-32 sm:w-36 sm:h-36 mx-auto rounded-full p-2 bg-white/95 shadow-glow-gold border-2 border-[#D8B26E] flex items-center justify-center">
+                <img
+                  src="/assets/02.png"
+                  alt="The Food Models Authenticity Seal"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Official City Scale Logo Plate */}
+            <div className="w-full max-w-[240px] px-4 py-2.5 rounded-2xl bg-white shadow-md border border-[#D8B26E]/40 mb-4 flex items-center justify-center">
               <img
-                src="/assets/02.png"
-                alt="City Scale Authenticity Seal"
-                className="w-full h-full object-contain"
+                src="/assets/city-scale-logo.png"
+                alt="City Scale Models Official Logo"
+                className="h-10 w-auto object-contain"
               />
             </div>
 
             <div className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase text-[#D8B26E] mb-1">
               <ShieldCheck className="w-4 h-4 text-[#D8B26E]" />
-              <span>Official Subsidiary</span>
+              <span>Official Specialized Subsidiary</span>
             </div>
 
-            <p className="text-xs text-[#FAF8F5]/80 font-serif">
+            <p className="text-xs text-[#FAF8F5]/90 font-serif">
               City Scale Models Engineering S.A.E.
             </p>
-            <p className="text-[11px] text-[#D8B26E]/80 mt-1">
+            <p className="text-[11px] text-[#D8B26E]/90 mt-1 font-medium">
               {isRTL ? 'المراكز الهندسية: مصر • المملكة العربية السعودية' : 'Engineering Centers: Egypt • Saudi Arabia'}
             </p>
+
+            {/* Direct Official Website Link */}
+            <a
+              href="https://city-scale.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 w-full py-2.5 px-4 rounded-full bg-[#D8B26E] hover:bg-[#c49d52] text-[#1C1917] font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md hover:scale-102 group"
+            >
+              <span>{isRTL ? 'الموقع الرسمي: city-scale.com' : 'Official Site: city-scale.com'}</span>
+              <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-transform" />
+            </a>
           </motion.div>
 
         </div>

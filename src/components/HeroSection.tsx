@@ -21,13 +21,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreLines, onComm
     {
       title: isRTL ? 'منحوتات فايبر جلاس عملاقة' : 'Monumental Outdoor Sculptures',
       subtitle: isRTL ? 'معالم معمارية بأي حجم' : 'Urban Drive-Thru Landmarks',
-      image: '/food/Pizza.PNG',
+      image: '/outdoor/chipsy-playz.png',
       badge: isRTL ? 'مقاومة للأشعة UV' : 'UV Weatherproof',
     },
     {
       title: isRTL ? 'طاولات ذكية تفاعلية' : 'Smart Interactive Touch Tables',
       subtitle: isRTL ? 'قوائم رقمية وترفيه عائلي' : 'Next-Gen Dining Experience',
-      image: '/food/gateau.jpg',
+      image: '/smart-tables/youtube-maxres.jpg',
       badge: isRTL ? 'تقنية لمس 120Hz' : 'Multi-Touch Dining',
     },
   ];

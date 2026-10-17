@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useQuoteModal } from '../context/QuoteModalContext';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -13,18 +14,55 @@ import {
   UtensilsCrossed, 
   Lightbulb,
   Shield,
-  Sun,
-  Flame,
-  ArrowRight
+  ArrowRight,
+  Eye,
+  Check
 } from 'lucide-react';
 
 export const VisualLinesSection: React.FC = () => {
   const { t, isRTL } = useLanguage();
+  const { openQuoteModal } = useQuoteModal();
   const [activeTab, setActiveTab] = useState<'line1' | 'line2' | 'line3'>('line1');
 
-  // LINE 01: Before/After Slider State
+  // LINE 01: Visual Match Slider State & Dishes
   const [sliderPosition, setSliderPosition] = useState(50);
+  const [activeDishKey, setActiveDishKey] = useState<'burger' | 'pizza' | 'dessert'>('burger');
   const sliderContainerRef = useRef<HTMLDivElement>(null);
+
+  const dishes = {
+    burger: {
+      name: isRTL ? 'برجر الذواقة المزدوج' : 'Gourmet Double Smash Burger',
+      image: '/food/burger.jpg',
+      shelfLife: isRTL ? 'يتلف ويفقد نضارته خلال 4 ساعات' : 'Perishable — Spoils in 4 Hours',
+      features: [
+        isRTL ? 'مطابقة ميكرونية 100% لعروق اللحم' : '100% Micro-Cellular Meat Grain',
+        isRTL ? 'طلاء بولي يوريثان حراري لمعان صوص الشيدر' : 'Permanent UV-Resistant Cheddar Glaze',
+        isRTL ? 'حبات سمسم سيليكونية ثلاثية الأبعاد' : '3D Silicone Sesame Seeds',
+      ],
+    },
+    pizza: {
+      name: isRTL ? 'بيتزا إيطالية بالبيبروني والأعشاب' : 'Stone-Baked Pepperoni Pizza',
+      image: '/food/pizza 2.PNG',
+      shelfLife: isRTL ? 'تتصلب وتجف الجبنة خلال 3 ساعات' : 'Perishable — Congeals in 3 Hours',
+      features: [
+        isRTL ? 'محاكاة لحروق الخبز بالفرن الخشبي' : 'Wood-Fired Leopard Char Simulation',
+        isRTL ? 'لمعان زيت البابريكا الدائم بالراتنج المرن' : 'Flexible Resin Paprika Oil Pools',
+        isRTL ? 'أوراق ريحان وأعشاب غير قابلة للذبول' : 'Permanent Non-Wilted Herbal Flakes',
+      ],
+    },
+    dessert: {
+      name: isRTL ? 'كيك الشوكولاتة الذائبة الفاخر' : 'Molten Chocolate Lava Cake',
+      image: '/food/molten cake.jpg',
+      shelfLife: isRTL ? 'يذوب ويفقد شكله الجمالي خلال 30 دقيقة' : 'Perishable — Melts in 30 Mins',
+      features: [
+        isRTL ? 'تدفق الشوكولاتة بقوام جيلاتيني دائم' : 'Permanent Fluid Lava Gel Matrix',
+        isRTL ? 'حبيبات سكر البودرة بتقنية الراتنج المتبلور' : 'Crystalline Polymer Powdered Sugar',
+        isRTL ? 'قشرة كيك إسفنجية مقاومة للرطوبة' : 'Moisture-Resistant Sponge Crust',
+      ],
+    },
+  };
+
+  const currentDish = dishes[activeDishKey];
 
   const handleSliderMove = (clientX: number) => {
     if (!sliderContainerRef.current) return;
@@ -44,8 +82,29 @@ export const VisualLinesSection: React.FC = () => {
     }
   };
 
-  // LINE 02: Scale Slider State (1m to 12m)
+  // LINE 02: Scale Slider State (2m to 12m) & Monumental Models
   const [monumentScale, setMonumentScale] = useState(6);
+  const [selectedMonumentKey, setSelectedMonumentKey] = useState<'chipsy' | 'vacuum' | 'danette'>('chipsy');
+
+  const monumentModels = {
+    chipsy: {
+      name: isRTL ? 'مجسم شيبسي وبليز العملاق' : 'Chipsy Playz Monumental Sculpture',
+      image: '/outdoor/chipsy-playz.png',
+      category: isRTL ? 'مجسم عبوة تجارية للواجهات والدرايف ثرو' : 'Commercial Facade & Drive-Thru Monument',
+    },
+    vacuum: {
+      name: isRTL ? 'مجسم الزجاجة الهندسية بالفاكيوم' : 'Vacuum-Formed Giant Bottle Beacon',
+      image: '/outdoor/vacuum-formed.webp',
+      category: isRTL ? 'مجسم معماري بتقنية التشكيل الحراري' : 'Thermoformed Architectural Landmark',
+    },
+    danette: {
+      name: isRTL ? 'مجسم دانيت المعماري الفاخر' : 'Danette Giant Dessert Landmark',
+      image: '/outdoor/danette-chocolate.webp',
+      category: isRTL ? 'نصب فايبر جلاس معالج حرارياً ومقاوم لـ UV' : 'UV-Cured FRP Monumental Sculpture',
+    },
+  };
+
+  const currentMonument = monumentModels[selectedMonumentKey];
 
   // LINE 03: Smart Table Simulator State
   const [simMode, setSimMode] = useState<'menu' | 'arcade' | 'lighting'>('menu');
@@ -170,67 +229,132 @@ export const VisualLinesSection: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Dedicated Page Link Button */}
-                <Link
-                  to="/lines/replicas"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold w-fit hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
-                >
-                  <span>{t.lines.viewDedicatedPage}</span>
-                  <ArrowRight className="w-4 h-4 rtl:rotate-180" />
-                </Link>
+                {/* Buttons Row */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <Link
+                    to="/lines/replicas"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
+                  >
+                    <span>{t.lines.viewDedicatedPage}</span>
+                    <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                  </Link>
+
+                  <button
+                    onClick={openQuoteModal}
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#BA2B43]/40 bg-white hover:bg-[#F4EAEB] text-[#4E1420] text-xs font-bold transition-all shadow-sm hover:scale-105 cursor-pointer"
+                  >
+                    <Sparkles className="w-4 h-4 text-[#BA2B43]" />
+                    <span>{isRTL ? 'طلب عرض سعر للمجسمات 1:1' : 'Request Quote for 1:1 Replicas'}</span>
+                  </button>
+                </div>
               </div>
 
-              {/* Interactive Before / After Comparison Showcase */}
+              {/* Interactive Visual Match Showcase (Pixel-Perfect Alignment & Dish Switcher) */}
               <div className="lg:col-span-6">
                 <div className="bg-white p-4 sm:p-6 rounded-3xl border border-[#BA2B43]/15 shadow-luxury">
                   
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#4E1420] flex items-center gap-1.5">
-                      <Sliders className="w-3.5 h-3.5 text-[#BA2B43]" />
-                      <span>{isRTL ? 'مقارنة التطابق البصري التفاعلية' : 'Interactive Visual Match Slider'}</span>
-                    </span>
-                    <span className="text-[11px] font-semibold text-[#BA2B43] bg-[#F4EAEB] px-2.5 py-0.5 rounded-full">
-                      100% 1:1 Match
-                    </span>
+                  {/* Top Bar with Dish Selector */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#4E1420] flex items-center gap-1.5">
+                        <Sliders className="w-3.5 h-3.5 text-[#BA2B43]" />
+                        <span>{isRTL ? 'مقارنة التطابق البصري التفاعلية' : 'Interactive Visual Match Slider'}</span>
+                      </span>
+                      <span className="text-[11px] text-[#BA2B43] font-semibold block mt-0.5">
+                        {currentDish.name}
+                      </span>
+                    </div>
+
+                    {/* Dish Selector Pills */}
+                    <div className="flex items-center gap-1 p-1 rounded-xl bg-[#FAF8F5] border border-[#4E1420]/10">
+                      {(Object.keys(dishes) as Array<keyof typeof dishes>).map((key) => (
+                        <button
+                          key={key}
+                          onClick={() => setActiveDishKey(key)}
+                          className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
+                            activeDishKey === key
+                              ? 'bg-[#4E1420] text-white shadow-sm'
+                              : 'text-[#1C1917]/70 hover:text-[#4E1420]'
+                          }`}
+                        >
+                          {key === 'burger' ? (isRTL ? 'برجر' : 'Burger') : key === 'pizza' ? (isRTL ? 'بيتزا' : 'Pizza') : (isRTL ? 'كيك' : 'Dessert')}
+                        </button>
+                      ))}
+                    </div>
                   </div>
 
-                  {/* Draggable Comparison Card */}
+                  {/* Pixel-Perfect Comparison Box */}
                   <div
                     ref={sliderContainerRef}
                     onMouseMove={handleMouseMove}
                     onTouchMove={handleTouchMove}
                     onClick={(e) => handleSliderMove(e.clientX)}
-                    className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden cursor-ew-resize select-none border border-[#4E1420]/15"
+                    className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden cursor-ew-resize select-none border border-[#4E1420]/15 bg-black"
                   >
+                    {/* Layer 1: Real Perishable Culinary Dish */}
                     <img
-                      src="/food/burger.jpg"
+                      src={currentDish.image}
                       alt="Real Culinary Dish"
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover filter brightness-[0.97]"
                     />
-                    <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-md bg-black/70 backdrop-blur-md text-white text-[11px] font-bold tracking-wide">
-                      {t.lines.line1.sliderRealLabel}
+
+                    {/* Real Dish Warning Badge (Top Left) */}
+                    <div className="absolute top-4 left-4 z-10 px-3 py-1.5 rounded-lg bg-black/75 backdrop-blur-md text-white text-[11px] font-bold tracking-wide border border-white/20 shadow-lg">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                        <span>{t.lines.line1.sliderRealLabel}</span>
+                      </div>
+                      <span className="text-[9px] text-amber-300 block font-mono mt-0.5">
+                        {currentDish.shelfLife}
+                      </span>
                     </div>
 
+                    {/* Layer 2: The Food Models Engineered Replica (Geometric Pixel-Match via clipPath) */}
                     <div
-                      className="absolute inset-0 overflow-hidden"
-                      style={{ width: `${sliderPosition}%` }}
+                      className="absolute inset-0 overflow-hidden pointer-events-none"
+                      style={{
+                        clipPath: isRTL
+                          ? `polygon(${100 - sliderPosition}% 0, 100% 0, 100% 100%, ${100 - sliderPosition}% 100%)`
+                          : `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`,
+                      }}
                     >
                       <img
-                        src="/food/burger 2.jfif"
+                        src={currentDish.image}
                         alt="The Food Models Artisan Replica"
                         className="absolute inset-0 w-full h-full object-cover"
-                        style={{ width: sliderContainerRef.current ? `${sliderContainerRef.current.clientWidth}px` : '100%' }}
                       />
-                      <div className="absolute top-4 right-4 z-10 px-3 py-1 rounded-md bg-[#4E1420]/90 backdrop-blur-md text-[#D8B26E] text-[11px] font-bold tracking-wide border border-[#D8B26E]/40">
-                        {t.lines.line1.sliderReplicaLabel}
+
+                      {/* Subtle Replica Authenticity Shading */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#4E1420]/40 via-transparent to-transparent" />
+
+                      {/* Replica Badge (Top Right) */}
+                      <div className="absolute top-4 right-4 z-10 px-3 py-1.5 rounded-lg bg-[#4E1420]/90 backdrop-blur-md text-[#D8B26E] text-[11px] font-bold tracking-wide border border-[#D8B26E]/50 shadow-lg">
+                        <div className="flex items-center gap-1.5">
+                          <Sparkles className="w-3.5 h-3.5 text-[#D8B26E]" />
+                          <span>{t.lines.line1.sliderReplicaLabel}</span>
+                        </div>
+                        <span className="text-[9px] text-emerald-300 block font-mono mt-0.5">
+                          {isRTL ? 'ضمان ثبات دائم: +10 سنوات' : 'Guaranteed Shelf-Life: 10+ Years'}
+                        </span>
+                      </div>
+
+                      {/* Engineering Callout Badges */}
+                      <div className="absolute bottom-4 left-4 right-4 z-10 flex flex-wrap gap-2">
+                        {currentDish.features.map((feat, idx) => (
+                          <span key={idx} className="px-2.5 py-1 rounded-md bg-black/75 backdrop-blur-md text-[10px] text-white border border-[#D8B26E]/30 font-semibold flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3 text-[#D8B26E]" />
+                            <span>{feat}</span>
+                          </span>
+                        ))}
                       </div>
                     </div>
 
+                    {/* Divider Line & Draggable Handle */}
                     <div
-                      className="absolute top-0 bottom-0 w-1 bg-white shadow-2xl z-20 flex items-center justify-center -translate-x-1/2"
+                      className="absolute top-0 bottom-0 w-0.5 bg-white shadow-2xl z-20 flex items-center justify-center -translate-x-1/2"
                       style={{ left: `${sliderPosition}%` }}
                     >
-                      <div className="w-8 h-8 rounded-full bg-[#4E1420] border-2 border-white shadow-lg flex items-center justify-center text-white">
+                      <div className="w-8 h-8 rounded-full bg-[#4E1420] border-2 border-white shadow-xl flex items-center justify-center text-[#D8B26E]">
                         <Sliders className="w-3.5 h-3.5" />
                       </div>
                     </div>
@@ -287,89 +411,176 @@ export const VisualLinesSection: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Dedicated Page Link Button */}
-                <Link
-                  to="/lines/monumental"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold w-fit hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
-                >
-                  <span>{isRTL ? 'استكشف مشاريع ومواصفات المنحوتات العملاقة لسيتي للمجسمات ←' : 'Explore City Scale Models Landmark Projects →'}</span>
-                  <ArrowRight className="w-4 h-4 rtl:rotate-180" />
-                </Link>
+                {/* Buttons Row */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <Link
+                    to="/lines/monumental"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold w-fit hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
+                  >
+                    <span>{isRTL ? 'استكشف مشاريع ومواصفات سيتي سكيل للمجسمات ←' : 'Explore City Scale Landmark Projects →'}</span>
+                    <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                  </Link>
+
+                  <button
+                    onClick={openQuoteModal}
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#BA2B43]/40 bg-white hover:bg-[#F4EAEB] text-[#4E1420] text-xs font-bold transition-all shadow-sm hover:scale-105 cursor-pointer"
+                  >
+                    <Sparkles className="w-4 h-4 text-[#BA2B43]" />
+                    <span>{isRTL ? 'طلب عرض سعر للمنحوتات العملاقة' : 'Request Quote for Monumental Scale'}</span>
+                  </button>
+                </div>
               </div>
 
-              {/* Interactive Monumental Scale Simulator Column */}
+              {/* Architectural CAD Monumental Scale Simulator (Special Model on Pedestal Stage) */}
               <div className="lg:col-span-6">
                 <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#BA2B43]/15 shadow-luxury flex flex-col">
                   
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#4E1420] flex items-center gap-1.5">
-                      <Maximize2 className="w-3.5 h-3.5 text-[#BA2B43]" />
-                      <span>{t.lines.line2.sliderTitle}</span>
-                    </span>
-                    <span className="text-xs font-extrabold text-[#4E1420] bg-[#D8B26E]/20 px-3 py-1 rounded-full border border-[#D8B26E]/40">
+                  {/* Top Bar with Model Selector */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#4E1420] flex items-center gap-1.5">
+                        <Maximize2 className="w-3.5 h-3.5 text-[#BA2B43]" />
+                        <span>{t.lines.line2.sliderTitle}</span>
+                      </span>
+                      <span className="text-[11px] text-[#1C1917]/65 block mt-0.5">
+                        {currentMonument.category}
+                      </span>
+                    </div>
+
+                    <span className="text-sm font-extrabold text-[#4E1420] bg-[#D8B26E]/20 px-3.5 py-1 rounded-full border border-[#D8B26E]/50">
                       {monumentScale} {isRTL ? 'أمتار' : 'Meters Tall'}
                     </span>
                   </div>
 
-                  <p className="text-xs text-[#1C1917]/65 mb-6">
-                    {t.lines.line2.sliderHint}
-                  </p>
+                  {/* Model Switcher Tabs */}
+                  <div className="flex items-center gap-1.5 p-1 rounded-xl bg-[#FAF8F5] border border-[#4E1420]/10 mb-4 max-w-fit">
+                    {(Object.keys(monumentModels) as Array<keyof typeof monumentModels>).map((key) => (
+                      <button
+                        key={key}
+                        onClick={() => setSelectedMonumentKey(key)}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          selectedMonumentKey === key
+                            ? 'bg-[#4E1420] text-white shadow-sm'
+                            : 'text-[#1C1917]/70 hover:text-[#4E1420]'
+                        }`}
+                      >
+                        {key === 'chipsy' ? (isRTL ? 'شيبسي بليز' : 'Chipsy') : key === 'vacuum' ? (isRTL ? 'زجاجة فاكيوم' : 'Bottle') : (isRTL ? 'دانيت' : 'Dessert')}
+                      </button>
+                    ))}
+                  </div>
 
-                  <div className="relative w-full h-72 sm:h-80 bg-gradient-to-b from-[#F4EAEB]/40 to-[#FAF8F5] rounded-2xl border border-[#4E1420]/15 flex items-end justify-center px-6 pb-6 gap-8 overflow-hidden">
-                    <div className="absolute inset-x-0 bottom-0 top-0 flex flex-col justify-between pointer-events-none opacity-20 px-4">
-                      <div className="border-b border-dashed border-[#4E1420] w-full text-[10px] text-right">10m</div>
-                      <div className="border-b border-dashed border-[#4E1420] w-full text-[10px] text-right">7.5m</div>
-                      <div className="border-b border-dashed border-[#4E1420] w-full text-[10px] text-right">5m</div>
-                      <div className="border-b border-dashed border-[#4E1420] w-full text-[10px] text-right">2.5m</div>
+                  {/* Architectural CAD Stage Container */}
+                  <div className="relative w-full h-80 sm:h-96 bg-gradient-to-b from-[#1C1917] via-[#2A151B] to-[#14080B] rounded-2xl border border-[#4E1420]/30 flex items-end justify-center px-6 pb-8 gap-8 overflow-hidden select-none">
+                    
+                    {/* Architectural Elevation Grid Lines */}
+                    <div className="absolute inset-x-0 bottom-8 top-0 flex flex-col justify-between pointer-events-none opacity-25 px-4">
+                      <div className="border-b border-dashed border-[#D8B26E] w-full text-[10px] text-[#D8B26E] font-mono text-right rtl:text-left">12m Elevation</div>
+                      <div className="border-b border-dashed border-[#D8B26E] w-full text-[10px] text-[#D8B26E] font-mono text-right rtl:text-left">9m Elevation</div>
+                      <div className="border-b border-dashed border-[#D8B26E] w-full text-[10px] text-[#D8B26E] font-mono text-right rtl:text-left">6m Elevation</div>
+                      <div className="border-b border-dashed border-[#D8B26E] w-full text-[10px] text-[#D8B26E] font-mono text-right rtl:text-left">3m Elevation</div>
                     </div>
 
-                    <div className="flex flex-col items-center z-10">
-                      <div className="h-[45px] w-6 bg-[#1C1917] rounded-t-full flex items-center justify-center opacity-70">
-                        <span className="text-[7px] text-white font-bold">1.8m</span>
+                    {/* Upward Spotlight Beams */}
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-64 h-72 bg-gradient-to-t from-[#D8B26E]/15 to-transparent blur-2xl pointer-events-none" />
+
+                    {/* Ground Asphalt / Concrete Pavement */}
+                    <div className="absolute inset-x-0 bottom-0 h-8 bg-[#181514] border-t border-white/10 flex items-center justify-between px-6">
+                      <div className="flex gap-2 opacity-30">
+                        <span className="w-6 h-1 bg-white rounded" />
+                        <span className="w-6 h-1 bg-white rounded" />
+                        <span className="w-6 h-1 bg-white rounded" />
                       </div>
-                      <span className="text-[10px] font-bold text-[#1C1917]/70 mt-1 whitespace-nowrap">
+                      <span className="text-[9px] font-mono text-white/40 uppercase">Turnkey Ground Zero • Structural Foundation</span>
+                    </div>
+
+                    {/* Figure 1: Human Reference (1.8m) */}
+                    <div className="flex flex-col items-center z-10 mb-0">
+                      <div className="h-[44px] w-4 bg-white/70 rounded-t-full flex items-center justify-center shadow-lg relative">
+                        <div className="w-2.5 h-2.5 rounded-full bg-white absolute -top-3" />
+                      </div>
+                      <span className="text-[9px] font-mono text-white/70 mt-1 whitespace-nowrap bg-black/60 px-1.5 py-0.5 rounded">
                         {isRTL ? 'إنسان (1.8م)' : 'Human (1.8m)'}
                       </span>
                     </div>
 
-                    <div className="flex flex-col items-center z-10">
+                    {/* Figure 2: Drive-Thru Car Reference (2.2m) */}
+                    <div className="hidden sm:flex flex-col items-center z-10 mb-0">
+                      <div className="h-[52px] w-14 bg-white/20 border border-white/30 rounded-t-xl flex items-center justify-center">
+                        <span className="text-[8px] font-mono text-white/60">CAR 2.2m</span>
+                      </div>
+                      <span className="text-[9px] font-mono text-white/50 mt-1 whitespace-nowrap bg-black/60 px-1.5 py-0.5 rounded">
+                        Drive-Thru
+                      </span>
+                    </div>
+
+                    {/* Figure 3: The Monumental Food Model (Special Cut-Out Model on Plinth) */}
+                    <div className="flex flex-col items-center z-10 relative">
+                      
+                      {/* Dynamic Scaled Model with Aspect Ratio Preserved */}
                       <motion.div
-                        animate={{ height: `${Math.min(240, monumentScale * 24)}px` }}
+                        animate={{ 
+                          height: `${Math.min(255, monumentScale * 22 + 25)}px`,
+                        }}
                         transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-                        className="w-32 sm:w-44 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#BA2B43] relative"
+                        className="relative flex items-end justify-center filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)]"
                       >
                         <img
-                          src="/outdoor/danette-chocolate.webp"
-                          alt="Monumental Food Model"
-                          className="w-full h-full object-cover"
+                          src={currentMonument.image}
+                          alt={currentMonument.name}
+                          className="h-full w-auto object-contain max-h-[255px]"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#4E1420]/60 via-transparent to-transparent flex items-end p-2 justify-center">
-                          <span className="text-xs font-black text-white drop-shadow-md">
-                            {monumentScale}m Architecture
-                          </span>
+
+                        {/* Monument Height Callout Badge */}
+                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap px-2.5 py-0.5 rounded-full bg-[#BA2B43] text-white text-[10px] font-bold border border-white/40 shadow-lg">
+                          {monumentScale}.0m
                         </div>
                       </motion.div>
-                      <span className="text-[10px] font-bold text-[#BA2B43] mt-1 whitespace-nowrap">
-                        {isRTL ? 'مجسم سيتي للمجسمات المعماري' : 'City Scale Monumental Model'}
-                      </span>
+
+                      {/* Engineered Concrete Plinth / Pedestal */}
+                      <div className="w-24 sm:w-32 h-3.5 bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500 rounded-t border-t border-white/40 flex items-center justify-around px-2 shadow-xl">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black/60" />
+                        <span className="text-[8px] font-bold text-gray-800 uppercase tracking-widest">Base Anchor</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-black/60" />
+                      </div>
                     </div>
                   </div>
 
-                  <div className="mt-6">
+                  {/* Scale Range Slider */}
+                  <div className="mt-5">
                     <div className="flex justify-between text-xs font-bold text-[#4E1420] mb-2">
-                      <span>1 Meter (Entrance)</span>
-                      <span>5 Meters (Drive-Thru)</span>
-                      <span>10+ Meters (Highway Beacon)</span>
+                      <span>2 Meters (Entrance Totem)</span>
+                      <span>6 Meters (Flagship Drive-Thru)</span>
+                      <span>12 Meters (Highway Beacon)</span>
                     </div>
                     <input
                       type="range"
-                      min={1}
-                      max={10}
+                      min={2}
+                      max={12}
                       step={1}
                       value={monumentScale}
                       onChange={(e) => setMonumentScale(Number(e.target.value))}
-                      className="w-full h-2 bg-[#F4EAEB] rounded-lg appearance-none cursor-pointer accent-[#BA2B43]"
+                      className="w-full h-2.5 bg-[#F4EAEB] rounded-lg appearance-none cursor-pointer accent-[#BA2B43]"
                     />
+                  </div>
+
+                  {/* Real-time Engineering CAD Specs Grid */}
+                  <div className="mt-4 pt-4 border-t border-[#4E1420]/10 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+                    <div className="p-2 rounded-xl bg-[#FAF8F5] border border-[#4E1420]/10">
+                      <span className="text-[10px] text-[#1C1917]/60 block">{isRTL ? 'عمق الأساس الخرساني' : 'Anchor Depth'}</span>
+                      <span className="text-xs font-bold text-[#4E1420]">{(monumentScale * 0.25).toFixed(1)}m C40</span>
+                    </div>
+                    <div className="p-2 rounded-xl bg-[#FAF8F5] border border-[#4E1420]/10">
+                      <span className="text-[10px] text-[#1C1917]/60 block">{isRTL ? 'مقاومة الرياح' : 'Wind Resistance'}</span>
+                      <span className="text-xs font-bold text-emerald-700">140 km/h</span>
+                    </div>
+                    <div className="p-2 rounded-xl bg-[#FAF8F5] border border-[#4E1420]/10">
+                      <span className="text-[10px] text-[#1C1917]/60 block">{isRTL ? 'الوزن التقديري' : 'Estimated Weight'}</span>
+                      <span className="text-xs font-bold text-[#4E1420]">{Math.round(monumentScale * 135)} kg</span>
+                    </div>
+                    <div className="p-2 rounded-xl bg-[#FAF8F5] border border-[#4E1420]/10">
+                      <span className="text-[10px] text-[#1C1917]/60 block">{isRTL ? 'مدى الرؤية البصرية' : 'Sightline'}</span>
+                      <span className="text-xs font-bold text-[#BA2B43]">{monumentScale * 75}m</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -419,14 +630,24 @@ export const VisualLinesSection: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Dedicated Page Link Button */}
-                <Link
-                  to="/lines/smart-tables"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold w-fit hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
-                >
-                  <span>{isRTL ? 'شاهد مقاطع الفيديو الحية والمواصفات الكاملة للطاولات ←' : 'Watch Live Video Footage & Hardware Specifications →'}</span>
-                  <ArrowRight className="w-4 h-4 rtl:rotate-180" />
-                </Link>
+                {/* Buttons Row */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <Link
+                    to="/lines/smart-tables"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E1420] text-white text-xs font-bold w-fit hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
+                  >
+                    <span>{isRTL ? 'شاهد مقاطع الفيديو الحية والمواصفات الكاملة للطاولات ←' : 'Watch Live Video Footage & Hardware Specifications →'}</span>
+                    <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                  </Link>
+
+                  <button
+                    onClick={openQuoteModal}
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#BA2B43]/40 bg-white hover:bg-[#F4EAEB] text-[#4E1420] text-xs font-bold transition-all shadow-sm hover:scale-105 cursor-pointer"
+                  >
+                    <Sparkles className="w-4 h-4 text-[#BA2B43]" />
+                    <span>{isRTL ? 'طلب عرض سعر للطاولات الذكية' : 'Request Quote for Smart Tables'}</span>
+                  </button>
+                </div>
               </div>
 
               {/* Interactive Smart Table Simulator */}
@@ -475,46 +696,46 @@ export const VisualLinesSection: React.FC = () => {
                     </div>
                   </div>
 
+                  {/* Surface Touch Screen Canvas */}
                   <div
                     onClick={handleTableTouch}
-                    className="relative w-full h-80 rounded-2xl border-2 bg-gradient-to-b from-black/80 to-[#2A0810]/70 overflow-hidden cursor-pointer select-none p-6 flex flex-col justify-between"
-                    style={{ borderColor: ambientColor }}
+                    className="relative w-full h-72 sm:h-80 rounded-2xl border-2 border-white/20 overflow-hidden cursor-pointer select-none bg-black/60 flex flex-col justify-between p-4"
                   >
-                    {ripples.map((ripple) => (
-                      <motion.span
-                        key={ripple.id}
-                        initial={{ scale: 0, opacity: 0.9 }}
-                        animate={{ scale: 4, opacity: 0 }}
-                        transition={{ duration: 1.2, ease: 'easeOut' }}
-                        className="absolute rounded-full pointer-events-none"
+                    {/* Simulated Touch Ripples */}
+                    {ripples.map((rip) => (
+                      <motion.div
+                        key={rip.id}
+                        initial={{ scale: 0, opacity: 0.8 }}
+                        animate={{ scale: 3, opacity: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="absolute rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 border-2 border-[#D8B26E]"
                         style={{
-                          left: ripple.x - 20,
-                          top: ripple.y - 20,
-                          width: 40,
-                          height: 40,
-                          border: `2px solid ${ambientColor}`,
-                          boxShadow: `0 0 20px ${ambientColor}`,
+                          left: rip.x,
+                          top: rip.y,
+                          width: '60px',
+                          height: '60px',
                         }}
                       />
                     ))}
 
+                    {/* Mode Content */}
                     {simMode === 'menu' && (
                       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="h-full flex flex-col justify-between">
-                        <div className="flex items-center justify-between text-xs text-white/80 border-b border-white/10 pb-2">
-                          <span className="font-mono text-[#D8B26E]">TABLE 07 • VIP LOUNGE</span>
-                          <span className="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px]">
-                            Live POS Connected
+                        <div className="flex items-center justify-between text-xs text-[#D8B26E] font-bold">
+                          <span>{isRTL ? 'طاولة ضيافة VIP 04' : 'Guest: VIP Table 04'}</span>
+                          <span className="px-2 py-0.5 rounded bg-[#BA2B43] text-white text-[10px]">
+                            {isRTL ? 'قائمة ثلاثية الأبعاد' : '3D Visual Menu'}
                           </span>
                         </div>
 
-                        <div className="flex items-center gap-4 my-auto">
+                        <div className="flex items-center gap-4 bg-white/10 p-3 rounded-xl backdrop-blur-md">
                           <img
-                            src="/food/burger.jpg"
-                            alt="3D Dish Preview"
-                            className="w-24 h-24 rounded-xl object-cover border border-white/20 shadow-lg animate-float"
+                            src="/smart-tables/youtube-maxres.jpg"
+                            alt="3D Interactive Dish"
+                            className="w-16 h-16 rounded-lg object-cover border border-white/20"
                           />
-                          <div className="flex-1">
-                            <h5 className="text-white font-bold text-base">
+                          <div>
+                            <h5 className="text-white font-bold text-sm">
                               {t.lines.line3.menuDemo.item}
                             </h5>
                             <span className="text-[#D8B26E] font-bold text-sm block mt-0.5">

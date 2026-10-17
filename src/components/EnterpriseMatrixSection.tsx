@@ -1,10 +1,12 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useQuoteModal } from '../context/QuoteModalContext';
 import { motion } from 'framer-motion';
 import { Check, X, ShieldAlert, Award, Sparkles } from 'lucide-react';
 
 export const EnterpriseMatrixSection: React.FC = () => {
   const { t, isRTL } = useLanguage();
+  const { openQuoteModal } = useQuoteModal();
   const matrix = t.matrix;
 
   return (
@@ -107,12 +109,12 @@ export const EnterpriseMatrixSection: React.FC = () => {
               {isRTL ? 'نقدم شهادات اعتماد هيكلي ومقاومة حرارية رسمية مع كل مشروع.' : 'Structural certificates & thermal testing documentation provided with every commission.'}
             </p>
           </div>
-          <a
-            href="#lead-form"
-            className="px-6 py-2.5 rounded-full bg-[#4E1420] text-white text-xs font-bold hover:bg-[#350B14] transition-colors whitespace-nowrap shadow-sm"
+          <button
+            onClick={openQuoteModal}
+            className="px-6 py-2.5 rounded-full bg-[#4E1420] text-white text-xs font-bold hover:bg-[#350B14] transition-colors whitespace-nowrap shadow-sm cursor-pointer"
           >
             {isRTL ? 'طلب عرض سعر' : 'Request Quotation'}
-          </a>
+          </button>
         </div>
 
       </div>

@@ -17,9 +17,11 @@ import {
   Volume2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useQuoteModal } from '../context/QuoteModalContext';
 
 export const SmartTablesPage: React.FC = () => {
   const { t, isRTL } = useLanguage();
+  const { openQuoteModal } = useQuoteModal();
   const data = t.smartTablesPage;
 
   // Selected Clip / Video Preview State
@@ -91,44 +93,97 @@ export const SmartTablesPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Main Video Screen Container */}
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl bg-black mb-8">
-            {!isPlayingEmbed ? (
-              <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlayingEmbed(true)}>
-                <img
-                  src={data.videoClips[activeClipIndex].image}
-                  alt={data.videoClips[activeClipIndex].title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors flex items-center justify-center">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#BA2B43] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform border-4 border-white">
-                    <Play className="w-8 h-8 sm:w-10 sm:h-10 ml-1 fill-white" />
-                  </div>
-                </div>
-
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white">
-                  <div>
-                    <span className="text-xs font-mono text-[#D8B26E] font-bold block mb-1">
-                      {isRTL ? 'معاينة المقطع:' : 'Active Video Segment:'} {data.videoClips[activeClipIndex].time}
-                    </span>
-                    <h3 className="font-serif text-lg sm:text-2xl font-bold">
-                      {data.videoClips[activeClipIndex].title}
-                    </h3>
-                  </div>
-                  <span className="px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold">
-                    Click to Play Full Video
-                  </span>
-                </div>
+          {/* Main Video Screen Container - Bespoke Hardware Console Display */}
+          <div className="relative w-full rounded-2xl overflow-hidden border-2 border-[#D8B26E]/40 shadow-2xl bg-[#0F0C0D] mb-8">
+            
+            {/* Console Hardware Top Status Bar */}
+            <div className="h-10 px-4 bg-[#181315] border-b border-white/10 flex items-center justify-between text-xs text-white/70 select-none">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[11px] font-mono tracking-wider uppercase text-white font-bold">
+                  {isRTL ? 'بث تجريبي حي بدقة 4K • شاشة اللمس التفاعلية' : 'LIVE 4K HARDWARE DEMO • 120Hz CAPACITIVE SURFACE'}
+                </span>
               </div>
-            ) : (
-              <iframe
-                src="https://www.youtube.com/embed/gN-BXxQ2mvg?autoplay=1&rel=0&modestbranding=1"
-                title="Smart Interactive Dining Table Demonstration"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full border-0"
-              />
-            )}
+              <div className="flex items-center gap-3 text-[10px] font-mono text-[#D8B26E]">
+                <span>IP65 WATERPROOF TEST</span>
+                <span className="hidden sm:inline">•</span>
+                <span className="hidden sm:inline">10-POINT MULTI-TOUCH</span>
+              </div>
+            </div>
+
+            {/* Video Viewport (16:9 Aspect Ratio) */}
+            <div className="relative w-full aspect-video bg-black overflow-hidden">
+              {!isPlayingEmbed ? (
+                <div 
+                  className="relative w-full h-full group cursor-pointer" 
+                  onClick={() => setIsPlayingEmbed(true)}
+                >
+                  <img
+                    src={data.videoClips[activeClipIndex].image}
+                    alt={data.videoClips[activeClipIndex].title}
+                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
+                  />
+                  
+                  {/* High-Tech Ambient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40 group-hover:via-black/20 transition-all flex items-center justify-center">
+                    
+                    {/* Custom Luxury Play Button */}
+                    <div className="relative">
+                      <div className="absolute -inset-4 rounded-full bg-[#BA2B43]/30 blur-xl animate-pulse" />
+                      <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#4E1420] to-[#BA2B43] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform border-2 border-[#D8B26E]">
+                        <Play className="w-8 h-8 sm:w-10 sm:h-10 ml-1 fill-white text-white drop-shadow-md" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Video Metadata HUD */}
+                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-white">
+                    <div>
+                      <span className="text-[11px] font-mono text-[#D8B26E] font-bold block mb-1">
+                        {isRTL ? 'معاينة المقطع:' : 'Active Demo Segment:'} {data.videoClips[activeClipIndex].time}
+                      </span>
+                      <h3 className="font-serif text-base sm:text-xl font-bold drop-shadow">
+                        {data.videoClips[activeClipIndex].title}
+                      </h3>
+                    </div>
+                    <span className="px-4 py-2 rounded-full bg-[#4E1420]/80 backdrop-blur-md text-xs font-bold border border-[#D8B26E]/40 shadow-lg text-[#D8B26E] self-start sm:self-auto flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>{isRTL ? 'بدء تشغيل العرض التوضيحي' : 'Watch Hardware Demo'}</span>
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <div className="relative w-full h-full">
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/gN-BXxQ2mvg?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1"
+                    title="Smart Interactive Dining Table Demonstration"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full border-0 pointer-events-auto"
+                  />
+                  
+                  {/* Floating Custom HUD Exit/Reload Button */}
+                  <div className="absolute top-3 right-3 rtl:right-auto rtl:left-3 z-10">
+                    <button
+                      onClick={() => setIsPlayingEmbed(false)}
+                      className="px-3.5 py-1.5 rounded-full bg-black/85 hover:bg-[#BA2B43] text-white text-[11px] font-bold backdrop-blur-md border border-white/25 transition-colors cursor-pointer shadow-lg"
+                    >
+                      {isRTL ? '✕ إيقاف / اختيار مشهد آخر' : '✕ Reset / Select Feature'}
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Custom Bottom Console Status Footer */}
+            <div className="h-9 px-4 bg-[#140F11] border-t border-white/10 flex items-center justify-between text-[11px] text-white/60">
+              <span className="font-mono text-[#D8B26E]">
+                {isRTL ? 'المواصفة: زجاج سيكوريت مقوى 8 ملم مضاد للكسر وسوائل الأطعمة' : 'Spec: 8mm Toughened Armor Glass • Liquid Resistant'}
+              </span>
+              <span className="text-[10px] font-mono text-emerald-400">
+                120Hz ULTRA-LOW LATENCY
+              </span>
+            </div>
           </div>
 
           {/* 4 Small Video Scene Clips Selector */}
@@ -398,13 +453,23 @@ export const SmartTablesPage: React.FC = () => {
               ? 'تواصل معنا لتحديد موعد لمعاينة النظام الحي ومناقشة التوريد والربط التقني مع أنظمة نقاط البيع بمطعمك.'
               : 'Schedule a private hands-on demonstration and explore turnkey restaurant hardware integration.'}
           </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4E1420] text-white text-xs font-bold tracking-wide hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
-          >
-            <span>{isRTL ? 'احجز استشارة للطاولات الذكية لمشروعك' : 'Book Smart Table Integration Consultation'}</span>
-            <ArrowRight className="w-4 h-4 rtl:rotate-180" />
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button
+              onClick={openQuoteModal}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4E1420] text-white text-xs font-bold tracking-wide hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105 cursor-pointer border border-[#D8B26E]/40"
+            >
+              <Sparkles className="w-4 h-4 text-[#D8B26E]" />
+              <span>{isRTL ? 'طلب عرض سعر للطاولات التفاعلية' : 'Request Smart Tables Quotation'}</span>
+            </button>
+
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-[#4E1420]/20 bg-white hover:bg-[#F4EAEB] text-[#4E1420] text-xs font-bold transition-all shadow-sm hover:scale-105"
+            >
+              <span>{isRTL ? 'استشارة هندسية خاصة' : 'Schedule Engineering Consultation'}</span>
+              <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+            </Link>
+          </div>
         </div>
       </div>
 

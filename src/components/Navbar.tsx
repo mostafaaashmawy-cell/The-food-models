@@ -197,16 +197,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal }) => {
             {/* Actions: Deck, Language Switcher, CTA */}
             <div className="flex items-center gap-2.5 sm:gap-3.5">
               
-              {/* Executive Concept Deck Button */}
-              <button
-                onClick={onOpenProposal}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#4E1420] border border-[#BA2B43]/25 rounded-full hover:bg-[#F4EAEB] transition-all hover:border-[#BA2B43]/50 cursor-pointer"
-                title={t.nav.proposalButton}
-              >
-                <FileText className="w-3.5 h-3.5 text-[#BA2B43]" />
-                <span className="hidden md:inline">{t.nav.proposalButton}</span>
-              </button>
-
               {/* Language Switcher */}
               <button
                 onClick={toggleLanguage}
@@ -217,18 +207,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal }) => {
                 <span className="tracking-wider uppercase">{language === 'en' ? 'عربي' : 'EN'}</span>
               </button>
 
-              {/* Header Primary CTA */}
-              <Link
-                to="/contact"
-                onClick={closeMenus}
-                className="relative group overflow-hidden rounded-full bg-[#4E1420] px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-semibold tracking-wide text-[#FAF8F5] transition-all duration-300 hover:bg-[#350B14] shadow-luxury hover:shadow-luxury-hover border border-[#BA2B43]/30 cursor-pointer"
+              {/* Header Primary CTA: Request a Quote (Opens Modal) */}
+              <button
+                onClick={onOpenProposal}
+                className="relative group overflow-hidden rounded-full bg-[#4E1420] px-4 sm:px-6 py-2 sm:py-2.5 text-xs font-semibold tracking-wide text-[#FAF8F5] transition-all duration-300 hover:bg-[#350B14] shadow-luxury hover:shadow-luxury-hover border border-[#D8B26E]/40 cursor-pointer"
+                title={t.nav.proposalButton}
               >
                 <span className="relative z-10 flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-[#D8B26E] animate-pulse" />
-                  <span className="whitespace-nowrap">{t.nav.cta}</span>
+                  <span className="whitespace-nowrap">{t.nav.proposalButton}</span>
                 </span>
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-[#D8B26E]/20 to-transparent" />
-              </Link>
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-[#D8B26E]/25 to-transparent" />
+              </button>
 
               {/* Mobile Hamburger Button */}
               <button
@@ -315,26 +305,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal }) => {
                 <span>{t.nav.links.contact}</span>
               </Link>
 
-              <div className="pt-3 flex flex-col gap-2.5">
+              <div className="pt-3">
                 <button
                   onClick={() => {
                     closeMenus();
                     onOpenProposal();
                   }}
-                  className="w-full py-2.5 px-4 rounded-xl border border-[#BA2B43]/30 text-xs font-semibold text-[#4E1420] bg-white flex items-center justify-center gap-2"
-                >
-                  <FileText className="w-4 h-4 text-[#BA2B43]" />
-                  <span>{t.nav.proposalButton}</span>
-                </button>
-
-                <Link
-                  to="/contact"
-                  onClick={closeMenus}
-                  className="w-full py-3 px-4 rounded-xl bg-[#4E1420] text-xs font-semibold text-white shadow-luxury flex items-center justify-center gap-2"
+                  className="w-full py-3 px-4 rounded-xl bg-[#4E1420] text-xs font-semibold text-white shadow-luxury flex items-center justify-center gap-2 border border-[#D8B26E]/40"
                 >
                   <Sparkles className="w-4 h-4 text-[#D8B26E]" />
-                  <span>{t.nav.cta}</span>
-                </Link>
+                  <span>{t.nav.proposalButton}</span>
+                </button>
               </div>
             </div>
           </motion.div>

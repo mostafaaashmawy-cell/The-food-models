@@ -6,10 +6,10 @@ import { PortfolioGallery } from '../components/PortfolioGallery';
 import { EnterpriseMatrixSection } from '../components/EnterpriseMatrixSection';
 import { ProcessSection } from '../components/ProcessSection';
 import { LeadCaptureSection } from '../components/LeadCaptureSection';
-import { useNavigate } from 'react-router-dom';
+import { useQuoteModal } from '../context/QuoteModalContext';
 
 export const HomePage: React.FC = () => {
-  const navigate = useNavigate();
+  const { openQuoteModal } = useQuoteModal();
 
   return (
     <div>
@@ -18,7 +18,7 @@ export const HomePage: React.FC = () => {
           const el = document.querySelector('#visual-lines');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }}
-        onCommission={() => navigate('/contact')}
+        onCommission={openQuoteModal}
       />
 
       <HeritageSection />

@@ -1,11 +1,13 @@
 import React from 'react';
 import { PortfolioGallery } from '../components/PortfolioGallery';
 import { useLanguage } from '../context/LanguageContext';
-import { Award, ArrowRight } from 'lucide-react';
+import { Award, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useQuoteModal } from '../context/QuoteModalContext';
 
 export const PortfolioPage: React.FC = () => {
   const { isRTL } = useLanguage();
+  const { openQuoteModal } = useQuoteModal();
 
   return (
     <div className="pt-24 bg-[#FAF8F5]">
@@ -41,13 +43,13 @@ export const PortfolioPage: React.FC = () => {
               ? 'يقوم فريقنا بنمذجة ومسح أطباقك بدقة ميكرونية لتخليدها كتحف فنية تدوم لسنوات.'
               : 'Our master artisans and 3D photogrammetry rigs capture your exact recipe plating down to the micron.'}
           </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4E1420] text-white text-xs font-bold tracking-wide hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105"
+          <button
+            onClick={openQuoteModal}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4E1420] text-white text-xs font-bold tracking-wide hover:bg-[#350B14] transition-all shadow-luxury hover:scale-105 cursor-pointer border border-[#D8B26E]/40"
           >
+            <Sparkles className="w-4 h-4 text-[#D8B26E]" />
             <span>{isRTL ? 'اطلب تنفيذ طبقك الخاص الآن' : 'Commission a Custom Masterpiece'}</span>
-            <ArrowRight className="w-4 h-4 rtl:rotate-180" />
-          </Link>
+          </button>
         </div>
       </div>
     </div>
